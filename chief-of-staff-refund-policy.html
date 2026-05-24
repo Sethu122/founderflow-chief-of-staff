@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FounderFlow Refund and Cancellation Policy</title>
+    <meta name="description" content="FounderFlow refund, cancellation, and dispute handling policy.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ink-900: #0f172a;
+            --ink-700: #334155;
+            --slate-100: #f1f5f9;
+            --slate-200: #e2e8f0;
+            --slate-500: #64748b;
+            --white: #ffffff;
+            --radius: 8px;
+            --shadow: 0 14px 28px rgba(15, 23, 42, 0.1);
+            --max-width: 980px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+            color: var(--ink-900);
+            line-height: 1.62;
+        }
+
+        a {
+            color: #0369a1;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            width: min(100% - 36px, var(--max-width));
+            margin: 0 auto;
+            padding: 36px 0 56px;
+        }
+
+        .head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-size: 14px;
+            color: var(--ink-700);
+        }
+
+        .head .brand {
+            font-weight: 800;
+            font-size: 22px;
+            color: var(--ink-900);
+        }
+
+        .panel {
+            margin-top: 16px;
+            background: var(--white);
+            border: 1px solid var(--slate-200);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 24px;
+        }
+
+        h1 {
+            font-size: clamp(30px, 5vw, 42px);
+            line-height: 1.06;
+            font-weight: 800;
+        }
+
+        .lede {
+            margin-top: 10px;
+            color: var(--slate-500);
+            font-size: 17px;
+        }
+
+        h2 {
+            margin-top: 16px;
+            font-size: 22px;
+            line-height: 1.2;
+            font-weight: 800;
+        }
+
+        p {
+            margin-top: 10px;
+            color: var(--ink-700);
+            font-size: 15px;
+        }
+
+        ul {
+            margin-top: 10px;
+            padding-left: 18px;
+            color: var(--ink-700);
+            font-size: 15px;
+        }
+
+        li + li {
+            margin-top: 7px;
+        }
+
+        .footnote {
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--slate-500);
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <div class="head">
+            <p class="brand" id="brand">FounderFlow</p>
+            <nav aria-label="Policy navigation">
+                <a href="index.html">Landing</a> |
+                <a href="chief-of-staff-pricing.html">Pricing</a> |
+                <a href="chief-of-staff-demo.html">Demo</a>
+            </nav>
+        </div>
+
+        <article class="panel">
+            <h1>Refund &amp; Cancellation Policy</h1>
+            <p class="lede">
+                This policy applies to all FounderFlow AI Chief of Staff services purchased via Paystack.
+            </p>
+
+            <h2>1) Validation Sprint (Pilot) - One-Time Service</h2>
+            <ul>
+                <li>Full refund if cancellation is requested before kickoff and within 48 hours of payment.</li>
+                <li>If kickoff has started and delivery work has begun, the Pilot fee is non-refundable.</li>
+                <li>If FounderFlow cannot start service within 5 business days after confirmed onboarding, client may request a full refund.</li>
+            </ul>
+
+            <h2>2) Operator Partner - Monthly Engagement</h2>
+            <ul>
+                <li>Billing is monthly in advance for the service period.</li>
+                <li>Client may cancel renewal any time before the next billing date to prevent future charges.</li>
+                <li>For the active month already in progress, partial refunds are generally not provided unless service delivery failed materially.</li>
+            </ul>
+
+            <h2>3) Service Dissatisfaction and Disputes</h2>
+            <ul>
+                <li>Clients should first contact support to request resolution within 7 days of the issue.</li>
+                <li>FounderFlow investigates and responds within 2 business days with either remediation steps or refund decision.</li>
+                <li>If a chargeback/dispute is raised via Paystack, FounderFlow will provide delivery records and communication history as proof of service.</li>
+            </ul>
+
+            <h2>4) How to Request Cancellation or Refund</h2>
+            <p>
+                Send request details from the purchase email address to
+                <a id="support-email" href="mailto:muchangasethu0@gmail.com">muchangasethu0@gmail.com</a>
+                and include payment receipt, plan name, and reason for cancellation/refund request.
+            </p>
+
+            <h2>5) Processing Timelines</h2>
+            <ul>
+                <li>Approved refunds are initiated within 3 business days.</li>
+                <li>Final settlement timing depends on the customer bank/card network.</li>
+            </ul>
+
+            <p class="footnote">Last updated: <span id="today-date"></span></p>
+        </article>
+    </main>
+
+    <script src="chief-of-staff-payment-config.js"></script>
+    <script>
+        const config = window.chiefOfStaffPaymentConfig || {};
+        const businessName = config.businessName || "FounderFlow";
+        const supportEmail = config.supportEmail || "support@example.com";
+
+        document.title = businessName + " Refund and Cancellation Policy";
+        document.getElementById("brand").textContent = businessName;
+        const supportNode = document.getElementById("support-email");
+        supportNode.textContent = supportEmail;
+        supportNode.href = "mailto:" + supportEmail;
+        document.getElementById("today-date").textContent = new Date().toLocaleDateString("en-ZA", {
+            year: "numeric",
+            month: "long",
+            day: "numeric"
+        });
+    </script>
+</body>
+</html>

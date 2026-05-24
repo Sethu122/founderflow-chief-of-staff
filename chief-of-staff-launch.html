@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chief of Staff AI | Save 10-15 Hours Per Week</title>
+    <meta
+        name="description"
+        content="AI Chief of Staff for founders and operators. Reclaim 10-15 hours weekly with inbox triage, scheduling, follow-ups, and execution support."
+    >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+    <style>
+        :root {
+            --ink-900: #0f172a;
+            --ink-800: #1e293b;
+            --ink-700: #334155;
+            --sky-100: #e0f2fe;
+            --slate-50: #f8fafc;
+            --slate-100: #f1f5f9;
+            --slate-200: #e2e8f0;
+            --slate-500: #64748b;
+            --emerald-600: #059669;
+            --teal-600: #0d9488;
+            --amber-500: #f59e0b;
+            --white: #ffffff;
+            --radius: 8px;
+            --shadow-soft: 0 12px 26px rgba(15, 23, 42, 0.1);
+            --max-width: 1120px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            min-height: 100%;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            color: var(--ink-900);
+            background: var(--white);
+            line-height: 1.5;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(100% - 40px, var(--max-width));
+            margin: 0 auto;
+        }
+
+        .topbar {
+            position: fixed;
+            inset: 0 0 auto;
+            z-index: 30;
+            border-bottom: 1px solid rgba(226, 232, 240, 0.4);
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(8px);
+        }
+
+        .topbar-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            min-height: 74px;
+        }
+
+        .brand {
+            font-weight: 800;
+            font-size: 20px;
+            color: var(--ink-900);
+        }
+
+        .brand span {
+            color: var(--teal-600);
+        }
+
+        .top-links {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            color: var(--ink-700);
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            min-height: 44px;
+            padding: 0 18px;
+            border: 1px solid transparent;
+            border-radius: var(--radius);
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+        }
+
+        .btn i,
+        .btn svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .btn-primary {
+            background: var(--emerald-600);
+            color: var(--white);
+            box-shadow: 0 6px 16px rgba(5, 150, 105, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 20px rgba(5, 150, 105, 0.36);
+        }
+
+        .btn-secondary {
+            border-color: var(--slate-200);
+            background: var(--white);
+            color: var(--ink-800);
+        }
+
+        .btn-secondary:hover {
+            background: var(--slate-50);
+            transform: translateY(-1px);
+        }
+
+        .hero {
+            position: relative;
+            min-height: 88vh;
+            padding: 130px 0 86px;
+            background:
+                linear-gradient(98deg, rgba(15, 23, 42, 0.84) 0%, rgba(15, 23, 42, 0.66) 44%, rgba(15, 23, 42, 0.45) 100%),
+                url("https://images.pexels.com/photos/8092407/pexels-photo-8092407.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=1800") center/cover no-repeat;
+            color: var(--white);
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid rgba(226, 232, 240, 0.5);
+            border-radius: 999px;
+            padding: 8px 12px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0;
+            color: var(--sky-100);
+            background: rgba(15, 23, 42, 0.32);
+        }
+
+        .hero h1 {
+            max-width: 760px;
+            margin-top: 16px;
+            font-size: 56px;
+            line-height: 1.03;
+            font-weight: 800;
+        }
+
+        .hero p {
+            margin-top: 18px;
+            max-width: 700px;
+            font-size: 20px;
+            color: rgba(248, 250, 252, 0.95);
+        }
+
+        .hero-actions {
+            margin-top: 28px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .hero-points {
+            margin-top: 30px;
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 10px 16px;
+            max-width: 760px;
+        }
+
+        .hero-points li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 15px;
+            color: rgba(240, 249, 255, 0.95);
+        }
+
+        .hero-points svg {
+            margin-top: 1px;
+            width: 17px;
+            height: 17px;
+            color: var(--amber-500);
+            flex: 0 0 auto;
+        }
+
+        .signal-band {
+            background: var(--slate-50);
+            border-top: 1px solid var(--slate-200);
+            border-bottom: 1px solid var(--slate-200);
+        }
+
+        .signal-band .container {
+            padding: 18px 0;
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            color: var(--ink-700);
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .section {
+            padding: 78px 0;
+        }
+
+        section[id] {
+            scroll-margin-top: 96px;
+        }
+
+        .section-alt {
+            background: var(--slate-50);
+        }
+
+        .section h2 {
+            font-size: 36px;
+            line-height: 1.15;
+            font-weight: 800;
+            color: var(--ink-900);
+        }
+
+        .section-lede {
+            margin-top: 14px;
+            max-width: 760px;
+            font-size: 18px;
+            color: var(--slate-500);
+        }
+
+        .grid-3 {
+            margin-top: 28px;
+            display: grid;
+            gap: 16px;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .panel {
+            background: var(--white);
+            border: 1px solid var(--slate-200);
+            border-radius: var(--radius);
+            padding: 22px;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .panel-head {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--ink-900);
+        }
+
+        .panel-head svg {
+            color: var(--teal-600);
+            width: 18px;
+            height: 18px;
+        }
+
+        .panel p {
+            margin-top: 10px;
+            color: var(--slate-500);
+            font-size: 15px;
+        }
+
+        .offer-grid {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .offer {
+            border: 1px solid var(--slate-200);
+            border-radius: var(--radius);
+            background: var(--white);
+            padding: 24px;
+        }
+
+        .offer-highlight {
+            border-color: rgba(5, 150, 105, 0.5);
+            box-shadow: 0 14px 30px rgba(5, 150, 105, 0.12);
+        }
+
+        .offer h3 {
+            font-size: 24px;
+            line-height: 1.15;
+            font-weight: 800;
+            color: var(--ink-900);
+        }
+
+        .offer-price {
+            margin-top: 8px;
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--teal-600);
+        }
+
+        .offer-period {
+            font-size: 14px;
+            color: var(--slate-500);
+        }
+
+        .offer ul {
+            margin-top: 14px;
+            list-style: none;
+            display: grid;
+            gap: 10px;
+            color: var(--ink-700);
+            font-size: 15px;
+        }
+
+        .offer li {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .offer li svg {
+            width: 16px;
+            height: 16px;
+            color: var(--emerald-600);
+            margin-top: 2px;
+            flex: 0 0 auto;
+        }
+
+        .offer .btn {
+            margin-top: 18px;
+        }
+
+        .offer-btns {
+            margin-top: 18px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .offer-btns .btn {
+            margin-top: 0;
+        }
+
+        .form-band {
+            background: var(--ink-900);
+            color: var(--white);
+        }
+
+        .form-band h2 {
+            color: var(--white);
+        }
+
+        .form-band .section-lede {
+            color: rgba(241, 245, 249, 0.9);
+        }
+
+        .waitlist {
+            margin-top: 28px;
+        }
+
+        .waitlist-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .field {
+            display: grid;
+            gap: 6px;
+        }
+
+        .field label {
+            font-size: 14px;
+            font-weight: 600;
+            color: rgba(248, 250, 252, 0.95);
+        }
+
+        .field input,
+        .field select,
+        .field textarea {
+            width: 100%;
+            min-height: 46px;
+            border-radius: var(--radius);
+            border: 1px solid rgba(148, 163, 184, 0.45);
+            background: rgba(15, 23, 42, 0.75);
+            color: var(--white);
+            font: inherit;
+            font-size: 15px;
+            padding: 10px 12px;
+        }
+
+        .field textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .field input::placeholder,
+        .field textarea::placeholder {
+            color: rgba(226, 232, 240, 0.68);
+        }
+
+        .full {
+            grid-column: 1 / -1;
+        }
+
+        .waitlist .btn {
+            margin-top: 16px;
+        }
+
+        .form-note {
+            margin-top: 10px;
+            font-size: 13px;
+            color: rgba(226, 232, 240, 0.85);
+        }
+
+        .payment-section {
+            margin-top: 30px;
+            border-top: 1px solid rgba(148, 163, 184, 0.35);
+            padding-top: 22px;
+        }
+
+        .payment-head {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .payment-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .segmented {
+            display: inline-flex;
+            border: 1px solid rgba(148, 163, 184, 0.45);
+            border-radius: var(--radius);
+            overflow: hidden;
+            background: rgba(15, 23, 42, 0.4);
+        }
+
+        .segmented button {
+            min-height: 38px;
+            min-width: 110px;
+            border: 0;
+            border-right: 1px solid rgba(148, 163, 184, 0.35);
+            background: transparent;
+            color: rgba(241, 245, 249, 0.88);
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            padding: 0 12px;
+        }
+
+        .segmented button:last-child {
+            border-right: 0;
+        }
+
+        .segmented button[aria-pressed="true"] {
+            background: rgba(5, 150, 105, 0.25);
+            color: var(--white);
+        }
+
+        .payment-grid {
+            margin-top: 14px;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .pay-btn {
+            min-height: 52px;
+            justify-content: space-between;
+            padding: 0 14px;
+            border-radius: var(--radius);
+            border: 1px solid rgba(148, 163, 184, 0.45);
+            background: rgba(255, 255, 255, 0.06);
+            color: var(--white);
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+
+        .pay-btn:hover {
+            transform: translateY(-1px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .pay-btn strong {
+            display: block;
+            font-size: 15px;
+        }
+
+        .pay-btn span {
+            display: block;
+            font-size: 12px;
+            color: rgba(226, 232, 240, 0.85);
+            font-weight: 600;
+        }
+
+        .payment-help {
+            margin-top: 10px;
+            font-size: 13px;
+            color: rgba(226, 232, 240, 0.86);
+        }
+
+        .bot-field {
+            position: absolute;
+            left: -10000px;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .scripts-grid {
+            margin-top: 28px;
+            display: grid;
+            gap: 16px;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .script-box {
+            border: 1px solid var(--slate-200);
+            border-radius: var(--radius);
+            background: var(--white);
+            padding: 18px;
+        }
+
+        .script-box h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--ink-900);
+        }
+
+        .script-box p {
+            margin-top: 10px;
+            color: var(--slate-500);
+            font-size: 14px;
+        }
+
+        .script-text {
+            margin-top: 12px;
+            border: 1px solid var(--slate-200);
+            border-radius: var(--radius);
+            background: var(--slate-50);
+            padding: 14px;
+            font-size: 15px;
+            color: var(--ink-800);
+            min-height: 124px;
+        }
+
+        .copy-row {
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .copy-status {
+            font-size: 13px;
+            color: var(--slate-500);
+        }
+
+        .footer {
+            background: var(--ink-800);
+            color: rgba(226, 232, 240, 0.95);
+            border-top: 1px solid rgba(148, 163, 184, 0.3);
+        }
+
+        .toast {
+            position: fixed;
+            right: 16px;
+            bottom: 16px;
+            z-index: 80;
+            background: #0f172a;
+            color: #f8fafc;
+            border: 1px solid rgba(148, 163, 184, 0.4);
+            border-radius: var(--radius);
+            padding: 10px 12px;
+            font-size: 13px;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(8px);
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .footer .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: space-between;
+            align-items: center;
+            padding: 22px 0;
+            font-size: 14px;
+        }
+
+        .footer-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 16px;
+            align-items: center;
+            font-size: 13px;
+        }
+
+        .footer-links a {
+            color: rgba(224, 242, 254, 0.95);
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 980px) {
+            .hero h1 {
+                font-size: 44px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .grid-3 {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .offer-grid,
+            .scripts-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 760px) {
+            .top-links a:not(.btn) {
+                display: none;
+            }
+
+            .hero {
+                min-height: 84vh;
+                padding-top: 118px;
+            }
+
+            .hero h1 {
+                font-size: 34px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .hero-points {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 64px 0;
+            }
+
+            .section h2 {
+                font-size: 30px;
+            }
+
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            .waitlist-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .payment-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="topbar">
+        <div class="container topbar-row">
+            <a href="#top" class="brand">Chief of Staff<span>AI</span></a>
+            <nav class="top-links" aria-label="Primary">
+                <a href="#how-it-works">How It Works</a>
+                <a href="#early-adopter">Early Adopter</a>
+                <a href="#waitlist">Waitlist</a>
+                <a href="chief-of-staff-pricing.html">Pricing</a>
+                <button class="btn btn-primary" type="button" data-scroll="#waitlist">
+                    <i data-lucide="arrow-right"></i>
+                    <span>Join Waitlist</span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="top">
+            <div class="container">
+                <p class="eyebrow">
+                    <i data-lucide="sparkles"></i>
+                    AI-Powered Chief of Staff for Founders
+                </p>
+                <h1>Get Back 10-15 Hours Every Week Without Hiring a Full Team.</h1>
+                <p>
+                    We manage inbox triage, scheduling, follow-ups, priorities, and project
+                    momentum so you can focus on high-leverage decisions and growth.
+                </p>
+                <div class="hero-actions">
+                    <button class="btn btn-primary" type="button" data-scroll="#waitlist">
+                        <i data-lucide="user-plus"></i>
+                        <span>Join the Waitlist</span>
+                    </button>
+                    <button class="btn btn-secondary" type="button" data-scroll="#early-adopter">
+                        <i data-lucide="badge-check"></i>
+                        <span>See Early-Adopter Offer</span>
+                    </button>
+                </div>
+                <ul class="hero-points">
+                    <li><i data-lucide="mail-check"></i><span>Inbox and email replies handled daily</span></li>
+                    <li><i data-lucide="calendar-check"></i><span>Calendar reshaping and scheduling support</span></li>
+                    <li><i data-lucide="list-checks"></i><span>Follow-up loops and task accountability</span></li>
+                    <li><i data-lucide="file-text"></i><span>Executive summaries and project brief drafting</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="signal-band" aria-label="Core outcomes">
+            <div class="container">
+                <span>Save 10-15 hours each week</span>
+                <span>Reduce admin overload</span>
+                <span>Ship projects faster</span>
+                <span>Scale before full-time hiring</span>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2>What Your AI Chief of Staff Covers</h2>
+                <p class="section-lede">
+                    Built for startup teams and operators who need daily execution support across
+                    communication, coordination, and follow-through.
+                </p>
+                <div class="grid-3">
+                    <article class="panel">
+                        <div class="panel-head">
+                            <i data-lucide="mail"></i>
+                            <h3>Email Command Center</h3>
+                        </div>
+                        <p>
+                            Prioritizes inboxes, drafts responses, flags urgent threads, and keeps
+                            important conversations moving.
+                        </p>
+                    </article>
+                    <article class="panel">
+                        <div class="panel-head">
+                            <i data-lucide="calendar-days"></i>
+                            <h3>Calendar Orchestration</h3>
+                        </div>
+                        <p>
+                            Schedules meetings, blocks deep work time, and protects your week from
+                            low-value interruptions.
+                        </p>
+                    </article>
+                    <article class="panel">
+                        <div class="panel-head">
+                            <i data-lucide="workflow"></i>
+                            <h3>Execution Follow-Through</h3>
+                        </div>
+                        <p>
+                            Tracks commitments, sends reminders, and keeps projects moving without
+                            manual babysitting.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt" id="how-it-works">
+            <div class="container">
+                <h2>Launch in Three Fast Steps</h2>
+                <p class="section-lede">
+                    We start concierge-style, prove value fast, then automate what is already
+                    generating real outcomes.
+                </p>
+                <div class="grid-3">
+                    <article class="panel">
+                        <div class="panel-head">
+                            <i data-lucide="search-check"></i>
+                            <h3>1. Validate</h3>
+                        </div>
+                        <p>
+                            Capture waitlist demand, run discovery, and confirm this is a
+                            painkiller problem worth paying for now.
+                        </p>
+                    </article>
+                    <article class="panel">
+                        <div class="panel-head">
+                            <i data-lucide="hand-coins"></i>
+                            <h3>2. Pre-Sell</h3>
+                        </div>
+                        <p>
+                            Invite qualified leads into an early-adopter cohort with pricing,
+                            onboarding, and clear success targets.
+                        </p>
+                    </article>
+                    <article class="panel">
+                        <div class="panel-head">
+                            <i data-lucide="cog"></i>
+                            <h3>3. Productize</h3>
+                        </div>
+                        <p>
+                            Reinvest early revenue into automation so delivery becomes repeatable,
+                            scalable, and higher-margin.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="early-adopter">
+            <div class="container">
+                <h2>Early-Adopter Program</h2>
+                <p class="section-lede">
+                    Choose your starting point and get hands-on support while the system is tuned
+                    to your workflow.
+                </p>
+                <div class="offer-grid">
+                    <article class="offer">
+                        <h3 id="pilot-plan-name">Validation Sprint</h3>
+                        <p class="offer-price" id="pilot-plan-price">$750</p>
+                        <p class="offer-period" id="pilot-plan-period">Two-week pilot</p>
+                        <ul>
+                            <li><i data-lucide="check"></i><span>Inbox triage and draft workflows</span></li>
+                            <li><i data-lucide="check"></i><span>Calendar and scheduling support</span></li>
+                            <li><i data-lucide="check"></i><span>Weekly founder check-in</span></li>
+                        </ul>
+                        <div class="offer-btns">
+                            <button class="btn btn-secondary" type="button" data-scroll="#waitlist" data-choose-plan="pilot">
+                                <i data-lucide="send"></i>
+                                <span>Apply for Pilot</span>
+                            </button>
+                            <button class="btn btn-primary pay-now-btn" type="button" data-plan="pilot">
+                                <i data-lucide="credit-card"></i>
+                                <span>Pay & Start</span>
+                            </button>
+                        </div>
+                    </article>
+                    <article class="offer offer-highlight">
+                        <h3 id="partner-plan-name">Operator Partner</h3>
+                        <p class="offer-price" id="partner-plan-price">$1,500</p>
+                        <p class="offer-period" id="partner-plan-period">Monthly engagement</p>
+                        <ul>
+                            <li><i data-lucide="check"></i><span>Daily execution and follow-up engine</span></li>
+                            <li><i data-lucide="check"></i><span>Project management and briefing support</span></li>
+                            <li><i data-lucide="check"></i><span>Priority automation rollout plan</span></li>
+                        </ul>
+                        <div class="offer-btns">
+                            <button class="btn btn-primary" type="button" data-scroll="#waitlist" data-choose-plan="partner">
+                                <i data-lucide="rocket"></i>
+                                <span>Join Early Adopter</span>
+                            </button>
+                            <button class="btn btn-secondary pay-now-btn" type="button" data-plan="partner">
+                                <i data-lucide="credit-card"></i>
+                                <span>Pay & Start</span>
+                            </button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section form-band" id="waitlist">
+            <div class="container">
+                <h2>Join the Waitlist</h2>
+                <p class="section-lede">
+                    Tell us about your team and biggest bottleneck. We will follow up with next
+                    steps for onboarding and early access.
+                </p>
+                <form
+                    class="waitlist"
+                    name="chief-of-staff-waitlist"
+                    action="https://formsubmit.co/muchangasethu0@gmail.com"
+                    method="POST"
+                >
+                    <input type="hidden" id="selected-plan" name="selected_plan" value="unspecified">
+                    <input type="hidden" name="_subject" value="FounderFlow Waitlist Lead">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="chief-of-staff-thank-you.html">
+                    <input type="hidden" name="_url" id="form-page-url" value="">
+                    <div class="waitlist-grid">
+                        <div class="field">
+                            <label for="name">Full Name</label>
+                            <input id="name" name="name" type="text" placeholder="Your name" required>
+                        </div>
+                        <div class="field">
+                            <label for="email">Work Email</label>
+                            <input id="email" name="email" type="email" placeholder="name@company.com" required>
+                        </div>
+                        <div class="field">
+                            <label for="role">Role</label>
+                            <input id="role" name="role" type="text" placeholder="Founder, COO, EA, etc." required>
+                        </div>
+                        <div class="field">
+                            <label for="team-size">Team Size</label>
+                            <select id="team-size" name="team_size" required>
+                                <option value="" selected disabled>Select team size</option>
+                                <option>Solo</option>
+                                <option>2-10</option>
+                                <option>11-25</option>
+                                <option>26-50</option>
+                                <option>50+</option>
+                            </select>
+                        </div>
+                        <div class="field full">
+                            <label for="bottleneck">Biggest Weekly Bottleneck</label>
+                            <textarea
+                                id="bottleneck"
+                                name="bottleneck"
+                                placeholder="Where are you losing the most time right now?"
+                                required
+                            ></textarea>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" type="submit">
+                        <i data-lucide="user-check"></i>
+                        <span>Reserve My Spot</span>
+                    </button>
+                    <p class="form-note">By submitting, you agree to be contacted about early access and onboarding.</p>
+                </form>
+
+                <section class="payment-section" aria-label="Direct payment checkout">
+                    <div class="payment-head">
+                        <h3 class="payment-title">Pay Securely with Paystack</h3>
+                    </div>
+                    <div class="payment-grid">
+                        <button type="button" class="pay-btn pay-now-btn" data-plan="pilot">
+                            <span>
+                                <strong id="pilot-pay-title">Pay $750 Pilot</strong>
+                                <span id="pilot-pay-subtitle">Two-week validation sprint</span>
+                            </span>
+                            <i data-lucide="arrow-right"></i>
+                        </button>
+                        <button type="button" class="pay-btn pay-now-btn" data-plan="partner">
+                            <span>
+                                <strong id="partner-pay-title">Pay $1,500 Partner</strong>
+                                <span id="partner-pay-subtitle">Monthly operator engagement</span>
+                            </span>
+                            <i data-lucide="arrow-right"></i>
+                        </button>
+                    </div>
+                    <p class="payment-help">
+                        Card checkout opens in Paystack and redirects back after payment.
+                        <a href="chief-of-staff-pricing.html">View pricing</a> and
+                        <a href="chief-of-staff-refund-policy.html">refund policy</a>.
+                    </p>
+                </section>
+            </div>
+        </section>
+
+        <section class="section" id="scripts">
+            <div class="container">
+                <h2>Outreach Scripts You Can Send Today</h2>
+                <p class="section-lede">
+                    Copy these into SMS, WhatsApp, or email to validate demand and start real
+                    conversations this week.
+                </p>
+                <div class="scripts-grid">
+                    <article class="script-box">
+                        <h3>Referral Ask</h3>
+                        <p>Use this for people already in your network.</p>
+                        <div class="script-text" id="script-referral">
+                            Who do you know that needs an AI-powered Chief of Staff to save
+                            10-15 hours per week across email, scheduling, follow-ups, and project
+                            coordination?
+                        </div>
+                        <div class="copy-row">
+                            <button class="btn btn-secondary copy-btn" type="button" data-copy-target="script-referral">
+                                <i data-lucide="copy"></i>
+                                <span>Copy Script</span>
+                            </button>
+                            <span class="copy-status" aria-live="polite"></span>
+                        </div>
+                    </article>
+                    <article class="script-box">
+                        <h3>Pre-Sell Follow-Up</h3>
+                        <p>Use this for people who replied or joined your waitlist.</p>
+                        <div class="script-text" id="script-presell">
+                            We are opening a small early-adopter cohort for our AI Chief of Staff.
+                            It includes inbox and schedule management, follow-up operations, and
+                            execution support. Would you like the details and pricing?
+                        </div>
+                        <div class="copy-row">
+                            <button class="btn btn-secondary copy-btn" type="button" data-copy-target="script-presell">
+                                <i data-lucide="copy"></i>
+                                <span>Copy Script</span>
+                            </button>
+                            <span class="copy-status" aria-live="polite"></span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-meta">
+                <p id="brand-name-footer">Chief of Staff AI</p>
+                <p>Support: <a id="support-email-footer" href="mailto:hello@yourdomain.com">hello@yourdomain.com</a></p>
+                <p>&copy; <span id="year"></span> All rights reserved.</p>
+            </div>
+            <nav class="footer-links" aria-label="Compliance and support links">
+                <a href="chief-of-staff-pricing.html">Pricing</a>
+                <a href="chief-of-staff-refund-policy.html">Refund &amp; Cancellation</a>
+                <a href="chief-of-staff-demo.html">Product Demo</a>
+            </nav>
+        </div>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="chief-of-staff-payment-config.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        const safeObject = (value) => {
+            if (value && typeof value === "object" && !Array.isArray(value)) {
+                return value;
+            }
+            return {};
+        };
+
+        let localOverride = {};
+        try {
+            localOverride = JSON.parse(localStorage.getItem("chiefOfStaffConfigOverride") || "{}");
+        } catch (error) {
+            localOverride = {};
+        }
+
+        const base = safeObject(window.chiefOfStaffPaymentConfig);
+        const override = safeObject(localOverride);
+
+        const defaultPlans = {
+            pilot: { name: "Validation Sprint", price: 750, period: "Two-week pilot" },
+            partner: { name: "Operator Partner", price: 1500, period: "Monthly engagement" }
+        };
+
+        const basePlans = safeObject(base.plans);
+        const overridePlans = safeObject(override.plans);
+
+        const paymentConfig = {
+            businessName: override.businessName || base.businessName || "Chief of Staff AI",
+            supportEmail: override.supportEmail || base.supportEmail || "hello@yourdomain.com",
+            currency: (override.currency || base.currency || "USD").toUpperCase(),
+            provider: "paystack",
+            onboardingUrl: override.onboardingUrl || base.onboardingUrl || "",
+            links: {
+                paystack: {
+                    pilot: override.links?.paystack?.pilot || base.links?.paystack?.pilot || "",
+                    partner: override.links?.paystack?.partner || base.links?.paystack?.partner || ""
+                }
+            },
+            plans: {
+                pilot: {
+                    name: overridePlans.pilot?.name || basePlans.pilot?.name || defaultPlans.pilot.name,
+                    price: Number(overridePlans.pilot?.price ?? basePlans.pilot?.price ?? defaultPlans.pilot.price),
+                    period: overridePlans.pilot?.period || basePlans.pilot?.period || defaultPlans.pilot.period
+                },
+                partner: {
+                    name: overridePlans.partner?.name || basePlans.partner?.name || defaultPlans.partner.name,
+                    price: Number(overridePlans.partner?.price ?? basePlans.partner?.price ?? defaultPlans.partner.price),
+                    period: overridePlans.partner?.period || basePlans.partner?.period || defaultPlans.partner.period
+                }
+            }
+        };
+
+        const yearNode = document.getElementById("year");
+        yearNode.textContent = new Date().getFullYear();
+        const selectedPlanInput = document.getElementById("selected-plan");
+        const emailInput = document.getElementById("email");
+        const toast = document.getElementById("toast");
+
+        const showToast = (message) => {
+            toast.textContent = message;
+            toast.classList.add("show");
+            setTimeout(() => {
+                toast.classList.remove("show");
+            }, 2400);
+        };
+
+        const planDisplayName = (plan) => paymentConfig.plans?.[plan]?.name || plan;
+
+        const formatMoney = (amount) => {
+            if (!Number.isFinite(amount)) {
+                return "$0";
+            }
+            try {
+                return new Intl.NumberFormat("en-US", {
+                    style: "currency",
+                    currency: paymentConfig.currency,
+                    maximumFractionDigits: 0
+                }).format(amount);
+            } catch (error) {
+                return "$" + amount;
+            }
+        };
+
+        const byId = (id) => document.getElementById(id);
+
+        const applyPageConfig = () => {
+            document.title = paymentConfig.businessName + " | Save 10-15 Hours Per Week";
+
+            const footerBrand = byId("brand-name-footer");
+            if (footerBrand) {
+                footerBrand.textContent = paymentConfig.businessName;
+            }
+
+            const supportEmail = byId("support-email-footer");
+            if (supportEmail) {
+                supportEmail.textContent = paymentConfig.supportEmail;
+                supportEmail.href = "mailto:" + paymentConfig.supportEmail;
+            }
+
+            const pilot = paymentConfig.plans.pilot;
+            const partner = paymentConfig.plans.partner;
+
+            byId("pilot-plan-name").textContent = pilot.name;
+            byId("pilot-plan-price").textContent = formatMoney(pilot.price);
+            byId("pilot-plan-period").textContent = pilot.period;
+            byId("partner-plan-name").textContent = partner.name;
+            byId("partner-plan-price").textContent = formatMoney(partner.price);
+            byId("partner-plan-period").textContent = partner.period;
+
+            byId("pilot-pay-title").textContent = "Pay " + formatMoney(pilot.price) + " " + pilot.name;
+            byId("pilot-pay-subtitle").textContent = pilot.period;
+            byId("partner-pay-title").textContent = "Pay " + formatMoney(partner.price) + " " + partner.name;
+            byId("partner-pay-subtitle").textContent = partner.period;
+        };
+        applyPageConfig();
+
+        const buildCheckoutUrl = (plan) => {
+            const base = paymentConfig.links?.paystack?.[plan] || "";
+            if (!base || base.includes("REPLACE_WITH")) {
+                return "";
+            }
+            const query = new URLSearchParams();
+            query.set("utm_source", "landing-page");
+            query.set("utm_medium", "direct");
+            query.set("utm_campaign", "chief-of-staff-ai");
+            query.set("utm_content", plan);
+            const separator = base.includes("?") ? "&" : "?";
+            return base + separator + query.toString();
+        };
+
+        document.querySelectorAll("[data-scroll]").forEach((button) => {
+            button.addEventListener("click", () => {
+                const targetSelector = button.getAttribute("data-scroll");
+                const target = document.querySelector(targetSelector);
+                if (target) {
+                    target.scrollIntoView({ behavior: "smooth", block: "start" });
+                }
+            });
+        });
+
+        document.querySelectorAll("[data-choose-plan]").forEach((button) => {
+            button.addEventListener("click", () => {
+                const plan = button.getAttribute("data-choose-plan");
+                if (selectedPlanInput && plan) {
+                    selectedPlanInput.value = plan;
+                    showToast("Plan selected: " + planDisplayName(plan));
+                }
+            });
+        });
+
+        document.querySelectorAll(".pay-now-btn").forEach((button) => {
+            button.addEventListener("click", () => {
+                const plan = button.getAttribute("data-plan");
+                if (!plan) {
+                    return;
+                }
+
+                if (selectedPlanInput) {
+                    selectedPlanInput.value = plan;
+                }
+
+                const checkoutUrl = buildCheckoutUrl(plan);
+                if (!checkoutUrl) {
+                    if (paymentConfig.onboardingUrl) {
+                        showToast("Payment link missing. Opening onboarding call.");
+                        window.open(paymentConfig.onboardingUrl, "_blank", "noopener");
+                        return;
+                    }
+                    showToast("Add your Paystack link in setup or config first.");
+                    return;
+                }
+
+                window.open(checkoutUrl, "_blank", "noopener");
+            });
+        });
+
+        document.querySelector(".waitlist")?.addEventListener("submit", (event) => {
+            const form = event.currentTarget;
+            if (!form) {
+                return;
+            }
+
+            try {
+                const state = {
+                    plan: selectedPlanInput?.value || "unspecified",
+                    email: emailInput?.value || ""
+                };
+                localStorage.setItem("chiefOfStaffCheckout", JSON.stringify(state));
+            } catch (error) {
+                // No action needed if storage is unavailable.
+            }
+
+            const nextInput = form.querySelector('input[name="_next"]');
+            if (nextInput) {
+                nextInput.value = new URL("chief-of-staff-thank-you.html", window.location.href).href;
+            }
+
+            const formUrlInput = form.querySelector('input[name="_url"]');
+            if (formUrlInput) {
+                formUrlInput.value = window.location.href;
+            }
+        });
+
+        document.querySelectorAll(".copy-btn").forEach((button) => {
+            button.addEventListener("click", async () => {
+                const targetId = button.getAttribute("data-copy-target");
+                const textNode = document.getElementById(targetId);
+                const statusNode = button.parentElement.querySelector(".copy-status");
+                if (!textNode || !statusNode) {
+                    return;
+                }
+
+                try {
+                    await navigator.clipboard.writeText(textNode.textContent.trim());
+                    statusNode.textContent = "Copied.";
+                    setTimeout(() => {
+                        statusNode.textContent = "";
+                    }, 2000);
+                } catch (error) {
+                    statusNode.textContent = "Copy failed. Please copy manually.";
+                }
+            });
+        });
+
+        if (window.lucide) {
+            window.lucide.createIcons();
+        }
+    </script>
+</body>
+</html>

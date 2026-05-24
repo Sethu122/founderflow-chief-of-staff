@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setup | Chief of Staff AI</title>
+    <meta name="description" content="No-code setup for Chief of Staff AI landing page, offers, and payment links.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ink-900: #0f172a;
+            --ink-700: #334155;
+            --slate-100: #f1f5f9;
+            --slate-200: #e2e8f0;
+            --slate-500: #64748b;
+            --emerald-600: #059669;
+            --white: #ffffff;
+            --radius: 8px;
+            --shadow: 0 16px 30px rgba(15, 23, 42, 0.12);
+            --max-width: 1120px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: "Inter", sans-serif;
+            background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+            color: var(--ink-900);
+        }
+
+        .container {
+            width: min(100% - 36px, var(--max-width));
+            margin: 0 auto;
+            padding: 34px 0 56px;
+        }
+
+        .hero {
+            background: var(--white);
+            border: 1px solid var(--slate-200);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 24px;
+        }
+
+        .hero h1 {
+            font-size: clamp(30px, 4.5vw, 44px);
+            line-height: 1.05;
+            font-weight: 800;
+        }
+
+        .hero p {
+            margin-top: 10px;
+            color: var(--slate-500);
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .button-row {
+            margin-top: 16px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .section {
+            margin-top: 16px;
+            background: var(--white);
+            border: 1px solid var(--slate-200);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 20px;
+        }
+
+        .section h2 {
+            font-size: 22px;
+            line-height: 1.2;
+            font-weight: 800;
+        }
+
+        .section p {
+            margin-top: 8px;
+            color: var(--slate-500);
+            font-size: 14px;
+        }
+
+        .grid {
+            margin-top: 14px;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .grid-4 {
+            margin-top: 14px;
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .field {
+            display: grid;
+            gap: 6px;
+        }
+
+        .field label {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--ink-700);
+        }
+
+        .field input,
+        .field select {
+            min-height: 44px;
+            border: 1px solid var(--slate-200);
+            border-radius: var(--radius);
+            background: var(--white);
+            color: var(--ink-900);
+            font: inherit;
+            font-size: 14px;
+            padding: 10px 12px;
+        }
+
+        .full {
+            grid-column: 1 / -1;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 44px;
+            padding: 0 16px;
+            border-radius: var(--radius);
+            border: 1px solid transparent;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-1px);
+        }
+
+        .btn-primary {
+            background: var(--emerald-600);
+            color: var(--white);
+        }
+
+        .btn-quiet {
+            border-color: var(--slate-200);
+            background: var(--white);
+            color: var(--ink-700);
+        }
+
+        .status {
+            margin-top: 10px;
+            font-size: 13px;
+            color: var(--ink-700);
+        }
+
+        .warn {
+            margin-top: 8px;
+            font-size: 13px;
+            color: #92400e;
+        }
+
+        @media (max-width: 980px) {
+            .grid-4 {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 760px) {
+            .grid,
+            .grid-4 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <section class="hero">
+            <h1>Setup Assistant</h1>
+            <p>
+                Fill this once, click Save Setup, and your landing page and thank-you page
+                will use your business details and payment links automatically.
+            </p>
+            <div class="button-row">
+                <a class="btn btn-quiet" href="chief-of-staff-launch.html">Open Landing Page</a>
+                <a class="btn btn-quiet" href="chief-of-staff-thank-you.html">Open Thank-You Page</a>
+            </div>
+        </section>
+
+        <form id="setup-form" class="section">
+            <h2>Business Settings</h2>
+            <div class="grid">
+                <div class="field">
+                    <label for="businessName">Business Name</label>
+                    <input id="businessName" name="businessName" type="text" required>
+                </div>
+                <div class="field">
+                    <label for="supportEmail">Support Email</label>
+                    <input id="supportEmail" name="supportEmail" type="email" required>
+                </div>
+                <div class="field">
+                    <label for="currency">Currency</label>
+                    <input id="currency" name="currency" type="text" maxlength="3" placeholder="ZAR" required>
+                </div>
+                <div class="field full">
+                    <label for="onboardingUrl">Onboarding Link (WhatsApp preferred)</label>
+                    <input id="onboardingUrl" name="onboardingUrl" type="url" placeholder="https://wa.me/27XXXXXXXXX?text=Hi%20I%20just%20paid">
+                </div>
+            </div>
+        </form>
+
+        <section class="section">
+            <h2>Offer Details</h2>
+            <div class="grid-4">
+                <div class="field">
+                    <label for="pilotName">Pilot Name</label>
+                    <input id="pilotName" type="text" required>
+                </div>
+                <div class="field">
+                    <label for="pilotPrice">Pilot Price</label>
+                    <input id="pilotPrice" type="number" min="1" step="1" required>
+                </div>
+                <div class="field">
+                    <label for="pilotPeriod">Pilot Period</label>
+                    <input id="pilotPeriod" type="text" required>
+                </div>
+                <div class="field">
+                    <label for="pilotPaystackLink">Paystack Pilot Link</label>
+                    <input id="pilotPaystackLink" type="url" placeholder="https://paystack.shop/pay/...">
+                </div>
+                <div class="field">
+                    <label for="partnerName">Partner Name</label>
+                    <input id="partnerName" type="text" required>
+                </div>
+                <div class="field">
+                    <label for="partnerPrice">Partner Price</label>
+                    <input id="partnerPrice" type="number" min="1" step="1" required>
+                </div>
+                <div class="field">
+                    <label for="partnerPeriod">Partner Period</label>
+                    <input id="partnerPeriod" type="text" required>
+                </div>
+                <div class="field">
+                    <label for="partnerPaystackLink">Paystack Partner Link</label>
+                    <input id="partnerPaystackLink" type="url" placeholder="https://paystack.shop/pay/...">
+                </div>
+            </div>
+            <div class="button-row">
+                <button type="button" class="btn btn-primary" id="saveBtn">Save Setup</button>
+                <button type="button" class="btn btn-quiet" id="resetBtn">Reset Local Setup</button>
+            </div>
+            <p class="status" id="statusText">Setup not saved in this browser yet.</p>
+            <p class="warn" id="warnText"></p>
+        </section>
+    </main>
+
+    <script src="chief-of-staff-payment-config.js"></script>
+    <script>
+        const safeObject = (value) => {
+            if (value && typeof value === "object" && !Array.isArray(value)) {
+                return value;
+            }
+            return {};
+        };
+
+        const base = safeObject(window.chiefOfStaffPaymentConfig);
+
+        const getOverride = () => {
+            try {
+                return safeObject(JSON.parse(localStorage.getItem("chiefOfStaffConfigOverride") || "{}"));
+            } catch (error) {
+                return {};
+            }
+        };
+
+        const formState = () => {
+            const override = getOverride();
+            const mergedPlans = {
+                pilot: {
+                    name: override.plans?.pilot?.name || base.plans?.pilot?.name || "Validation Sprint",
+                    price: Number(override.plans?.pilot?.price ?? base.plans?.pilot?.price ?? 3500),
+                    period: override.plans?.pilot?.period || base.plans?.pilot?.period || "Two-week pilot"
+                },
+                partner: {
+                    name: override.plans?.partner?.name || base.plans?.partner?.name || "Operator Partner",
+                    price: Number(override.plans?.partner?.price ?? base.plans?.partner?.price ?? 7500),
+                    period: override.plans?.partner?.period || base.plans?.partner?.period || "Monthly engagement"
+                }
+            };
+
+            return {
+                businessName: override.businessName || base.businessName || "Chief of Staff AI",
+                supportEmail: override.supportEmail || base.supportEmail || "hello@yourdomain.com",
+                currency: (override.currency || base.currency || "USD").toUpperCase(),
+                defaultProvider: "paystack",
+                onboardingUrl: override.onboardingUrl || base.onboardingUrl || "",
+                plans: mergedPlans,
+                links: {
+                    paystack: {
+                        pilot: override.links?.paystack?.pilot || base.links?.paystack?.pilot || "",
+                        partner: override.links?.paystack?.partner || base.links?.paystack?.partner || ""
+                    }
+                }
+            };
+        };
+
+        const setValue = (id, value) => {
+            const node = document.getElementById(id);
+            if (node) {
+                node.value = value ?? "";
+            }
+        };
+
+        const readValue = (id) => document.getElementById(id)?.value?.trim() || "";
+
+        const statusText = document.getElementById("statusText");
+        const warnText = document.getElementById("warnText");
+
+        const render = () => {
+            const state = formState();
+            setValue("businessName", state.businessName);
+            setValue("supportEmail", state.supportEmail);
+            setValue("currency", state.currency);
+            setValue("onboardingUrl", state.onboardingUrl);
+            setValue("pilotName", state.plans.pilot.name);
+            setValue("pilotPrice", state.plans.pilot.price);
+            setValue("pilotPeriod", state.plans.pilot.period);
+            setValue("partnerName", state.plans.partner.name);
+            setValue("partnerPrice", state.plans.partner.price);
+            setValue("partnerPeriod", state.plans.partner.period);
+            setValue("pilotPaystackLink", state.links.paystack.pilot);
+            setValue("partnerPaystackLink", state.links.paystack.partner);
+        };
+
+        const validateLinks = (config) => {
+            const hasPaystack = !!(config.links.paystack.pilot && config.links.paystack.partner);
+            if (!hasPaystack) {
+                return "Add both Paystack links (Pilot and Partner).";
+            }
+            return "";
+        };
+
+        document.getElementById("saveBtn").addEventListener("click", () => {
+            const config = {
+                businessName: readValue("businessName"),
+                supportEmail: readValue("supportEmail"),
+                currency: readValue("currency").toUpperCase(),
+                defaultProvider: "paystack",
+                onboardingUrl: readValue("onboardingUrl"),
+                plans: {
+                    pilot: {
+                        name: readValue("pilotName"),
+                        price: Number(readValue("pilotPrice")),
+                        period: readValue("pilotPeriod")
+                    },
+                    partner: {
+                        name: readValue("partnerName"),
+                        price: Number(readValue("partnerPrice")),
+                        period: readValue("partnerPeriod")
+                    }
+                },
+                links: {
+                    paystack: {
+                        pilot: readValue("pilotPaystackLink"),
+                        partner: readValue("partnerPaystackLink")
+                    }
+                }
+            };
+
+            localStorage.setItem("chiefOfStaffConfigOverride", JSON.stringify(config));
+            statusText.textContent = "Saved. Open the landing page and your settings will be applied.";
+            warnText.textContent = validateLinks(config);
+        });
+
+        document.getElementById("resetBtn").addEventListener("click", () => {
+            localStorage.removeItem("chiefOfStaffConfigOverride");
+            statusText.textContent = "Local setup reset. Base config file values are active again.";
+            warnText.textContent = "";
+            render();
+        });
+
+        render();
+        warnText.textContent = validateLinks(formState());
+    </script>
+</body>
+</html>

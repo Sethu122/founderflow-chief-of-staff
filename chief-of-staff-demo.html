@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FounderFlow Demo Access</title>
+    <meta name="description" content="FounderFlow product demo and test login for reviewer access.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ink-900: #0f172a;
+            --ink-700: #334155;
+            --slate-50: #f8fafc;
+            --slate-100: #f1f5f9;
+            --slate-200: #e2e8f0;
+            --slate-500: #64748b;
+            --emerald-600: #059669;
+            --white: #ffffff;
+            --radius: 8px;
+            --shadow: 0 14px 30px rgba(15, 23, 42, 0.1);
+            --max-width: 1080px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+            color: var(--ink-900);
+        }
+
+        .container {
+            width: min(100% - 36px, var(--max-width));
+            margin: 0 auto;
+            padding: 34px 0 56px;
+        }
+
+        a {
+            color: #0369a1;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .brand {
+            font-size: 22px;
+            font-weight: 800;
+        }
+
+        .head nav {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--ink-700);
+        }
+
+        .hero {
+            margin-top: 16px;
+            background: var(--white);
+            border: 1px solid var(--slate-200);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 22px;
+        }
+
+        h1 {
+            font-size: clamp(30px, 5vw, 42px);
+            line-height: 1.05;
+            font-weight: 800;
+        }
+
+        .lede {
+            margin-top: 10px;
+            color: var(--slate-500);
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .grid {
+            margin-top: 16px;
+            display: grid;
+            grid-template-columns: 340px minmax(0, 1fr);
+            gap: 12px;
+            align-items: start;
+        }
+
+        .card {
+            background: var(--white);
+            border: 1px solid var(--slate-200);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 18px;
+        }
+
+        .card h2 {
+            font-size: 22px;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .card p {
+            margin-top: 8px;
+            color: var(--slate-500);
+            font-size: 14px;
+            line-height: 1.55;
+        }
+
+        .field {
+            margin-top: 12px;
+        }
+
+        .field label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--ink-700);
+        }
+
+        .field input {
+            width: 100%;
+            min-height: 42px;
+            border: 1px solid var(--slate-200);
+            border-radius: var(--radius);
+            padding: 0 12px;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .field input:focus {
+            border-color: #0ea5e9;
+            box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.2);
+        }
+
+        .btn {
+            margin-top: 14px;
+            width: 100%;
+            min-height: 44px;
+            border: 0;
+            border-radius: var(--radius);
+            background: var(--emerald-600);
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .badge {
+            margin-top: 10px;
+            display: inline-flex;
+            align-items: center;
+            border: 1px solid var(--slate-200);
+            border-radius: 999px;
+            padding: 5px 10px;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--ink-700);
+            background: var(--slate-50);
+        }
+
+        .status {
+            margin-top: 8px;
+            font-size: 12px;
+            color: var(--slate-500);
+        }
+
+        .status.error {
+            color: #b91c1c;
+        }
+
+        .dashboard {
+            display: none;
+        }
+
+        .dashboard.show {
+            display: block;
+        }
+
+        .kpis {
+            margin-top: 12px;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 10px;
+        }
+
+        .kpi {
+            border: 1px solid var(--slate-200);
+            border-radius: var(--radius);
+            background: var(--slate-50);
+            padding: 12px;
+        }
+
+        .kpi strong {
+            display: block;
+            font-size: 21px;
+            line-height: 1.1;
+            font-weight: 800;
+            color: var(--ink-900);
+        }
+
+        .kpi span {
+            margin-top: 4px;
+            display: block;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--ink-700);
+        }
+
+        .list {
+            margin-top: 12px;
+            border: 1px solid var(--slate-200);
+            border-radius: var(--radius);
+            overflow: hidden;
+        }
+
+        .row {
+            padding: 11px 12px;
+            border-bottom: 1px solid var(--slate-200);
+            background: #ffffff;
+            font-size: 14px;
+            color: var(--ink-700);
+        }
+
+        .row:last-child {
+            border-bottom: 0;
+        }
+
+        .tiny {
+            margin-top: 10px;
+            font-size: 12px;
+            color: var(--slate-500);
+        }
+
+        @media (max-width: 900px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .kpis {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <header class="head">
+            <p class="brand" id="brand-name">FounderFlow</p>
+            <nav aria-label="Demo navigation">
+                <a href="index.html">Landing</a> |
+                <a href="chief-of-staff-pricing.html">Pricing</a> |
+                <a href="chief-of-staff-refund-policy.html">Refund Policy</a>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <h1>Reviewer Demo Access</h1>
+            <p class="lede">
+                This is a test account for review and verification. The demo shows the FounderFlow operating dashboard and workflow summaries for AI chief of staff service delivery.
+            </p>
+            <p class="badge">Read-only test environment</p>
+        </section>
+
+        <section class="grid">
+            <article class="card">
+                <h2>Test Login</h2>
+                <p>For reviewer access, use the credentials below or enter them manually.</p>
+                <div class="field">
+                    <label for="email">Email</label>
+                    <input id="email" type="email" value="paystack.review@founderflow.app" autocomplete="off">
+                </div>
+                <div class="field">
+                    <label for="password">Password</label>
+                    <input id="password" type="password" value="FounderFlow-Review-2026" autocomplete="off">
+                </div>
+                <button id="login-btn" class="btn" type="button">Login to Demo</button>
+                <p id="login-status" class="status">Access is for review only.</p>
+                <p class="tiny">Support email: <span id="support-email">muchangasethu0@gmail.com</span></p>
+            </article>
+
+            <article id="dashboard" class="card dashboard" aria-live="polite">
+                <h2>FounderFlow Operations Dashboard (Demo)</h2>
+                <p>Sample metrics and operational queues used to deliver client outcomes.</p>
+                <div class="kpis">
+                    <div class="kpi">
+                        <strong>12.5h</strong>
+                        <span>Avg hours saved per client/week</span>
+                    </div>
+                    <div class="kpi">
+                        <strong>94%</strong>
+                        <span>Follow-up completion rate</span>
+                    </div>
+                    <div class="kpi">
+                        <strong>2.1h</strong>
+                        <span>Average response handoff time</span>
+                    </div>
+                </div>
+                <div class="list" aria-label="Task queue demo">
+                    <div class="row">Inbox triage queue: 28 items pending priority labels</div>
+                    <div class="row">Calendar optimization queue: 6 meetings to reschedule</div>
+                    <div class="row">Follow-up automation queue: 14 client reminders due today</div>
+                    <div class="row">Weekly founder brief: draft generated and waiting approval</div>
+                </div>
+                <p class="tiny">This demo is representative and does not expose any real client data.</p>
+            </article>
+        </section>
+    </main>
+
+    <script src="chief-of-staff-payment-config.js"></script>
+    <script>
+        const config = window.chiefOfStaffPaymentConfig || {};
+        const businessName = config.businessName || "FounderFlow";
+        const supportEmail = config.supportEmail || "support@example.com";
+        const reviewerEmail = "paystack.review@founderflow.app";
+        const reviewerPassword = "FounderFlow-Review-2026";
+
+        document.title = businessName + " Demo Access";
+        document.getElementById("brand-name").textContent = businessName;
+        document.getElementById("support-email").textContent = supportEmail;
+
+        const emailInput = document.getElementById("email");
+        const passwordInput = document.getElementById("password");
+        const loginBtn = document.getElementById("login-btn");
+        const statusNode = document.getElementById("login-status");
+        const dashboard = document.getElementById("dashboard");
+
+        const unlockDashboard = () => {
+            dashboard.classList.add("show");
+            statusNode.textContent = "Login successful. Demo dashboard unlocked.";
+            statusNode.classList.remove("error");
+        };
+
+        loginBtn.addEventListener("click", () => {
+            const email = (emailInput.value || "").trim().toLowerCase();
+            const password = passwordInput.value || "";
+            if (email === reviewerEmail && password === reviewerPassword) {
+                unlockDashboard();
+                dashboard.scrollIntoView({ behavior: "smooth", block: "start" });
+                return;
+            }
+            statusNode.textContent = "Login failed. Please use the test credentials exactly as provided.";
+            statusNode.classList.add("error");
+        });
+
+        const params = new URLSearchParams(window.location.search);
+        if (params.get("autologin") === "1") {
+            unlockDashboard();
+        }
+    </script>
+</body>
+</html>

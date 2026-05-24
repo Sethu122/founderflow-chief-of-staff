@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FounderFlow Pricing</title>
+    <meta name="description" content="FounderFlow AI Chief of Staff pricing and billing terms.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ink-900: #0f172a;
+            --ink-700: #334155;
+            --slate-50: #f8fafc;
+            --slate-100: #f1f5f9;
+            --slate-200: #e2e8f0;
+            --slate-500: #64748b;
+            --emerald-600: #059669;
+            --white: #ffffff;
+            --radius: 8px;
+            --shadow: 0 14px 30px rgba(15, 23, 42, 0.1);
+            --max-width: 1040px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+            color: var(--ink-900);
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(100% - 36px, var(--max-width));
+            margin: 0 auto;
+            padding: 34px 0 56px;
+        }
+
+        .top {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .brand {
+            font-size: 22px;
+            font-weight: 800;
+        }
+
+        .links {
+            display: inline-flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--ink-700);
+        }
+
+        .links a:hover {
+            text-decoration: underline;
+        }
+
+        .hero {
+            margin-top: 18px;
+            background: var(--white);
+            border: 1px solid var(--slate-200);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 24px;
+        }
+
+        h1 {
+            font-size: clamp(30px, 5vw, 46px);
+            line-height: 1.05;
+            font-weight: 800;
+        }
+
+        .lede {
+            margin-top: 12px;
+            max-width: 840px;
+            font-size: 17px;
+            color: var(--slate-500);
+        }
+
+        .grid {
+            margin-top: 18px;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .plan {
+            background: var(--white);
+            border: 1px solid var(--slate-200);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 20px;
+        }
+
+        .plan h2 {
+            font-size: 23px;
+            line-height: 1.2;
+            font-weight: 800;
+        }
+
+        .price {
+            margin-top: 10px;
+            font-size: 36px;
+            line-height: 1;
+            font-weight: 800;
+        }
+
+        .period {
+            margin-top: 8px;
+            color: var(--ink-700);
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .plan ul {
+            margin-top: 14px;
+            padding-left: 18px;
+            color: var(--ink-700);
+            font-size: 15px;
+        }
+
+        .plan li + li {
+            margin-top: 6px;
+        }
+
+        .plan-actions {
+            margin-top: 16px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .btn {
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--radius);
+            padding: 0 16px;
+            font-size: 14px;
+            font-weight: 700;
+            border: 1px solid transparent;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--emerald-600);
+            color: #ffffff;
+        }
+
+        .btn-quiet {
+            background: #ffffff;
+            color: var(--ink-700);
+            border-color: var(--slate-200);
+        }
+
+        .terms {
+            margin-top: 14px;
+            background: var(--white);
+            border: 1px solid var(--slate-200);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 18px 20px;
+        }
+
+        .terms h3 {
+            font-size: 20px;
+            line-height: 1.2;
+            font-weight: 800;
+        }
+
+        .terms ul {
+            margin-top: 12px;
+            padding-left: 18px;
+            color: var(--ink-700);
+            font-size: 14px;
+        }
+
+        .terms li + li {
+            margin-top: 6px;
+        }
+
+        .tiny {
+            margin-top: 10px;
+            font-size: 12px;
+            color: var(--slate-500);
+        }
+
+        @media (max-width: 820px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <div class="top">
+            <p class="brand" id="brand">FounderFlow</p>
+            <nav class="links" aria-label="Pricing navigation">
+                <a href="index.html">Landing Page</a>
+                <a href="chief-of-staff-refund-policy.html">Refund &amp; Cancellation</a>
+                <a href="chief-of-staff-demo.html">Demo Login</a>
+            </nav>
+        </div>
+
+        <section class="hero">
+            <h1>Pricing Structure</h1>
+            <p class="lede">
+                FounderFlow provides AI-powered chief of staff services for founders and operators.
+                Pricing is in South African Rand (ZAR), payable via Paystack.
+            </p>
+        </section>
+
+        <section class="grid" aria-label="Plan pricing cards">
+            <article class="plan">
+                <h2 id="pilot-name">Validation Sprint</h2>
+                <p class="price" id="pilot-price">R3,500</p>
+                <p class="period" id="pilot-period">One-time two-week pilot</p>
+                <ul>
+                    <li>Inbox triage and draft workflows</li>
+                    <li>Calendar and scheduling support</li>
+                    <li>Weekly founder review</li>
+                </ul>
+                <div class="plan-actions">
+                    <button class="btn btn-primary pay-btn" data-plan="pilot" type="button">Pay Pilot</button>
+                    <a class="btn btn-quiet" href="chief-of-staff-setup.html">Setup</a>
+                </div>
+            </article>
+
+            <article class="plan">
+                <h2 id="partner-name">Operator Partner</h2>
+                <p class="price" id="partner-price">R7,500</p>
+                <p class="period" id="partner-period">Monthly engagement</p>
+                <ul>
+                    <li>Daily execution and follow-up operations</li>
+                    <li>Project management and founder briefing support</li>
+                    <li>Priority automation rollout</li>
+                </ul>
+                <div class="plan-actions">
+                    <button class="btn btn-primary pay-btn" data-plan="partner" type="button">Pay Partner</button>
+                    <a class="btn btn-quiet" href="chief-of-staff-setup.html">Setup</a>
+                </div>
+            </article>
+        </section>
+
+        <section class="terms">
+            <h3>Billing Terms</h3>
+            <ul>
+                <li>Validation Sprint is billed once upfront for a two-week delivery window.</li>
+                <li>Operator Partner is a monthly service engagement.</li>
+                <li>Until a recurring subscription page is activated, monthly renewals are confirmed and billed via secure Paystack payment request.</li>
+                <li>Support and billing email: <span id="support-email">muchangasethu0@gmail.com</span>.</li>
+                <li>Disputes, cancellations, and refunds follow the public policy published here: <a href="chief-of-staff-refund-policy.html">chief-of-staff-refund-policy.html</a>.</li>
+            </ul>
+            <p class="tiny">
+                Updated <span id="today-date"></span>.
+            </p>
+        </section>
+    </main>
+
+    <script src="chief-of-staff-payment-config.js"></script>
+    <script>
+        const safeObject = (value) => {
+            if (value && typeof value === "object" && !Array.isArray(value)) {
+                return value;
+            }
+            return {};
+        };
+
+        const base = safeObject(window.chiefOfStaffPaymentConfig);
+        const config = {
+            businessName: base.businessName || "FounderFlow",
+            supportEmail: base.supportEmail || "support@example.com",
+            currency: (base.currency || "ZAR").toUpperCase(),
+            plans: safeObject(base.plans),
+            links: safeObject(base.links)
+        };
+
+        const formatMoney = (amount) => {
+            try {
+                return new Intl.NumberFormat("en-ZA", {
+                    style: "currency",
+                    currency: config.currency,
+                    maximumFractionDigits: 0
+                }).format(Number(amount || 0));
+            } catch (error) {
+                return "R" + Number(amount || 0);
+            }
+        };
+
+        const pilot = safeObject(config.plans.pilot);
+        const partner = safeObject(config.plans.partner);
+
+        document.title = config.businessName + " Pricing";
+        document.getElementById("brand").textContent = config.businessName;
+        document.getElementById("support-email").textContent = config.supportEmail;
+        document.getElementById("pilot-name").textContent = pilot.name || "Validation Sprint";
+        document.getElementById("pilot-price").textContent = formatMoney(pilot.price || 3500);
+        document.getElementById("pilot-period").textContent = pilot.period || "One-time two-week pilot";
+        document.getElementById("partner-name").textContent = partner.name || "Operator Partner";
+        document.getElementById("partner-price").textContent = formatMoney(partner.price || 7500);
+        document.getElementById("partner-period").textContent = partner.period || "Monthly engagement";
+        document.getElementById("today-date").textContent = new Date().toLocaleDateString("en-ZA", {
+            year: "numeric",
+            month: "long",
+            day: "numeric"
+        });
+
+        const buildCheckoutUrl = (plan) => {
+            const baseUrl = config.links?.paystack?.[plan] || "";
+            if (!baseUrl) {
+                return "";
+            }
+            const query = new URLSearchParams();
+            query.set("utm_source", "pricing-page");
+            query.set("utm_medium", "direct");
+            query.set("utm_campaign", "chief-of-staff-ai");
+            query.set("utm_content", plan);
+            const separator = baseUrl.includes("?") ? "&" : "?";
+            return baseUrl + separator + query.toString();
+        };
+
+        document.querySelectorAll(".pay-btn").forEach((button) => {
+            button.addEventListener("click", () => {
+                const plan = button.getAttribute("data-plan");
+                const url = buildCheckoutUrl(plan);
+                if (!url) {
+                    alert("Payment link is missing in config.");
+                    return;
+                }
+                window.open(url, "_blank", "noopener");
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You | Chief of Staff AI</title>
+    <meta name="description" content="Thank you for joining the Chief of Staff AI waitlist. Choose your checkout path and continue onboarding.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ink-900: #0f172a;
+            --ink-700: #334155;
+            --slate-100: #f1f5f9;
+            --slate-200: #e2e8f0;
+            --slate-500: #64748b;
+            --emerald-600: #059669;
+            --white: #ffffff;
+            --radius: 8px;
+            --shadow: 0 18px 34px rgba(15, 23, 42, 0.14);
+            --max-width: 980px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: "Inter", sans-serif;
+            background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+            color: var(--ink-900);
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(100% - 36px, var(--max-width));
+            margin: 0 auto;
+            padding: 44px 0 56px;
+        }
+
+        .hero {
+            background: var(--white);
+            border: 1px solid var(--slate-200);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 28px;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid var(--slate-200);
+            border-radius: 999px;
+            padding: 8px 12px;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--ink-700);
+            background: #f8fafc;
+        }
+
+        h1 {
+            margin-top: 14px;
+            font-size: clamp(30px, 5vw, 46px);
+            line-height: 1.05;
+            font-weight: 800;
+            letter-spacing: 0;
+        }
+
+        .lede {
+            margin-top: 12px;
+            max-width: 760px;
+            color: var(--slate-500);
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .summary {
+            margin-top: 18px;
+            border: 1px solid var(--slate-200);
+            border-radius: var(--radius);
+            padding: 14px;
+            background: #f8fafc;
+            color: var(--ink-700);
+            font-size: 14px;
+        }
+
+        .summary strong {
+            color: var(--ink-900);
+        }
+
+        .section {
+            margin-top: 20px;
+            background: var(--white);
+            border: 1px solid var(--slate-200);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 24px;
+        }
+
+        .section h2 {
+            font-size: 24px;
+            line-height: 1.2;
+            font-weight: 800;
+        }
+
+        .section p {
+            margin-top: 10px;
+            color: var(--slate-500);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .segmented {
+            margin-top: 14px;
+            display: inline-flex;
+            border: 1px solid var(--slate-200);
+            border-radius: var(--radius);
+            overflow: hidden;
+        }
+
+        .segmented button {
+            min-height: 40px;
+            min-width: 118px;
+            padding: 0 12px;
+            border: 0;
+            border-right: 1px solid var(--slate-200);
+            background: #f8fafc;
+            color: var(--ink-700);
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .segmented button:last-child {
+            border-right: 0;
+        }
+
+        .segmented button[aria-pressed="true"] {
+            background: #dcfce7;
+            color: #065f46;
+        }
+
+        .grid {
+            margin-top: 14px;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            min-height: 46px;
+            padding: 0 16px;
+            border-radius: var(--radius);
+            border: 1px solid transparent;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .btn-primary {
+            background: var(--emerald-600);
+            color: var(--white);
+            box-shadow: 0 8px 20px rgba(5, 150, 105, 0.25);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-1px);
+        }
+
+        .btn-quiet {
+            border-color: var(--slate-200);
+            background: #ffffff;
+            color: var(--ink-700);
+        }
+
+        .btn-quiet:hover {
+            transform: translateY(-1px);
+        }
+
+        .footer-links {
+            margin-top: 14px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tiny {
+            margin-top: 10px;
+            font-size: 12px;
+            color: var(--slate-500);
+        }
+
+        .compliance-links {
+            margin-top: 12px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 14px;
+            font-size: 13px;
+        }
+
+        .compliance-links a {
+            color: #0369a1;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .compliance-links a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 760px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <section class="hero">
+            <p class="badge">Waitlist received</p>
+            <h1>You are in. Let's launch this.</h1>
+            <p class="lede">
+                Your submission has been sent. You can complete payment now to start onboarding
+                immediately, or return to the landing page to refine your details.
+            </p>
+            <p class="summary" id="summary">
+                Selected plan: <strong id="planLabel">Unspecified</strong><br>
+                Email captured: <strong id="emailLabel">Not provided</strong>
+            </p>
+        </section>
+
+        <section class="section">
+            <h2>Complete Payment by Card</h2>
+            <p>Continue securely with Paystack and complete your preferred plan.</p>
+            <div class="grid">
+                <button type="button" class="btn btn-primary pay-btn" id="pilot-pay-btn" data-plan="pilot">Pay $750 Pilot</button>
+                <button type="button" class="btn btn-primary pay-btn" id="partner-pay-btn" data-plan="partner">Pay $1,500 Partner</button>
+            </div>
+            <p class="tiny">After payment, we will continue onboarding on WhatsApp.</p>
+        </section>
+
+        <section class="section">
+            <h2>Next Actions</h2>
+            <p>After payment, move directly into onboarding and implementation kickoff.</p>
+            <div class="footer-links">
+                <a class="btn btn-quiet" href="chief-of-staff-launch.html">Back to Landing Page</a>
+                <a class="btn btn-quiet" id="onboarding-link" href="https://cal.com/your-handle/chief-of-staff-ai-onboarding" target="_blank" rel="noopener">Book Onboarding Call</a>
+            </div>
+            <p class="tiny">Business details for review and verification:</p>
+            <div class="compliance-links" aria-label="Compliance links">
+                <a href="chief-of-staff-pricing.html">Pricing</a>
+                <a href="chief-of-staff-refund-policy.html">Refund &amp; Cancellation Policy</a>
+                <a href="chief-of-staff-demo.html">Demo Login</a>
+            </div>
+        </section>
+    </main>
+
+    <script src="chief-of-staff-payment-config.js"></script>
+    <script>
+        const safeObject = (value) => {
+            if (value && typeof value === "object" && !Array.isArray(value)) {
+                return value;
+            }
+            return {};
+        };
+
+        let localOverride = {};
+        try {
+            localOverride = JSON.parse(localStorage.getItem("chiefOfStaffConfigOverride") || "{}");
+        } catch (error) {
+            localOverride = {};
+        }
+
+        const base = safeObject(window.chiefOfStaffPaymentConfig);
+        const override = safeObject(localOverride);
+        const basePlans = safeObject(base.plans);
+        const overridePlans = safeObject(override.plans);
+
+        const paymentConfig = {
+            businessName: override.businessName || base.businessName || "Chief of Staff AI",
+            currency: (override.currency || base.currency || "USD").toUpperCase(),
+            provider: "paystack",
+            onboardingUrl: override.onboardingUrl || base.onboardingUrl || "",
+            links: {
+                paystack: {
+                    pilot: override.links?.paystack?.pilot || base.links?.paystack?.pilot || "",
+                    partner: override.links?.paystack?.partner || base.links?.paystack?.partner || ""
+                }
+            },
+            plans: {
+                pilot: {
+                    name: overridePlans.pilot?.name || basePlans.pilot?.name || "Validation Sprint",
+                    price: Number(overridePlans.pilot?.price ?? basePlans.pilot?.price ?? 750)
+                },
+                partner: {
+                    name: overridePlans.partner?.name || basePlans.partner?.name || "Operator Partner",
+                    price: Number(overridePlans.partner?.price ?? basePlans.partner?.price ?? 1500)
+                }
+            }
+        };
+
+        const formatMoney = (amount) => {
+            if (!Number.isFinite(amount)) {
+                return "$0";
+            }
+            try {
+                return new Intl.NumberFormat("en-US", {
+                    style: "currency",
+                    currency: paymentConfig.currency,
+                    maximumFractionDigits: 0
+                }).format(amount);
+            } catch (error) {
+                return "$" + amount;
+            }
+        };
+
+        document.title = "Thank You | " + paymentConfig.businessName;
+        const onboardingLink = document.getElementById("onboarding-link");
+        if (onboardingLink && paymentConfig.onboardingUrl) {
+            onboardingLink.href = paymentConfig.onboardingUrl;
+        }
+
+        const savedRaw = localStorage.getItem("chiefOfStaffCheckout");
+        let saved = { plan: "unspecified", email: "" };
+        if (savedRaw) {
+            try {
+                saved = JSON.parse(savedRaw);
+            } catch (error) {
+                saved = { plan: "unspecified", email: "" };
+            }
+        }
+
+        const planLabel = document.getElementById("planLabel");
+        const emailLabel = document.getElementById("emailLabel");
+        planLabel.textContent = saved.plan === "pilot"
+            ? paymentConfig.plans.pilot.name
+            : saved.plan === "partner"
+                ? paymentConfig.plans.partner.name
+                : "Unspecified";
+        emailLabel.textContent = saved.email || "Not provided";
+        document.getElementById("pilot-pay-btn").textContent =
+            "Pay " + formatMoney(paymentConfig.plans.pilot.price) + " " + paymentConfig.plans.pilot.name;
+        document.getElementById("partner-pay-btn").textContent =
+            "Pay " + formatMoney(paymentConfig.plans.partner.price) + " " + paymentConfig.plans.partner.name;
+
+        const buildUrl = (plan) => {
+            const base = paymentConfig.links?.paystack?.[plan] || "";
+            if (!base || base.includes("REPLACE_WITH")) {
+                return "";
+            }
+
+            const params = new URLSearchParams();
+            params.set("utm_source", "thank-you");
+            params.set("utm_medium", "direct");
+            params.set("utm_campaign", "chief-of-staff-ai");
+            params.set("utm_content", plan);
+
+            const separator = base.includes("?") ? "&" : "?";
+            return base + separator + params.toString();
+        };
+
+        document.querySelectorAll(".pay-btn").forEach((button) => {
+            button.addEventListener("click", () => {
+                const plan = button.getAttribute("data-plan");
+                const url = buildUrl(plan);
+                if (!url) {
+                    if (paymentConfig.onboardingUrl) {
+                        window.open(paymentConfig.onboardingUrl, "_blank", "noopener");
+                        return;
+                    }
+                    alert("Add your live links in setup or config first.");
+                    return;
+                }
+                window.open(url, "_blank", "noopener");
+            });
+        });
+    </script>
+</body>
+</html>
