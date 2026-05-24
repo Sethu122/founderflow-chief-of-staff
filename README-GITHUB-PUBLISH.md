@@ -1,4 +1,4 @@
-# GitHub Pages Publish Guide (FounderFlow)
+﻿# GitHub Pages Publish Guide (FounderFlow)
 
 This folder is ready for GitHub Pages publishing.
 
@@ -15,16 +15,16 @@ This folder is ready for GitHub Pages publishing.
 
 Your URL will be:
 
-- `https://<your-username>.github.io/<your-repo>/`
+- `https://Sethu122.github.io/<your-repo>/`
 
 ## 2) Paystack review links to submit
 
 After publish, use these links:
 
-- Landing: `https://<your-username>.github.io/<your-repo>/`
-- Demo: `https://<your-username>.github.io/<your-repo>/chief-of-staff-demo.html`
-- Pricing: `https://<your-username>.github.io/<your-repo>/chief-of-staff-pricing.html`
-- Policy: `https://<your-username>.github.io/<your-repo>/chief-of-staff-refund-policy.html`
+- Landing: `https://Sethu122.github.io/<your-repo>/`
+- Demo: `https://Sethu122.github.io/<your-repo>/chief-of-staff-demo.html`
+- Pricing: `https://Sethu122.github.io/<your-repo>/chief-of-staff-pricing.html`
+- Policy: `https://Sethu122.github.io/<your-repo>/chief-of-staff-refund-policy.html`
 
 Use `paystack-review-response-template.md` in this folder as your email draft.
 
@@ -37,3 +37,4 @@ Use `paystack-review-response-template.md` in this folder as your email draft.
 
 - Pilot: `https://paystack.shop/pay/c911fnr58n`
 - Partner: `https://paystack.shop/pay/duc4g34l2n`
+
