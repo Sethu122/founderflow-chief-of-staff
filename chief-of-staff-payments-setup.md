@@ -5,14 +5,14 @@ Fastest way (no code edits):
 1. Open `chief-of-staff-setup.html`
 2. Fill business details and payment links
 3. Click **Save Setup**
-4. Open `chief-of-staff-launch.html` and test buttons
+4. Open `index.html` and test buttons
 
 Permanent live config (recommended before launch):
 
 1. Open `chief-of-staff-payment-config.js`
-2. Replace link placeholders:
-   - `https://paystack.shop/pay/REPLACE_WITH_PILOT_LINK`
-   - `https://paystack.shop/pay/REPLACE_WITH_PARTNER_LINK`
+2. Confirm current live links:
+   - Pilot: `https://paystack.shop/pay/c911fnr58n`
+   - Partner monthly: `https://paystack.shop/pay/mknz4-2p52`
 3. Update optional fields:
    - `businessName`
    - `supportEmail`
@@ -27,6 +27,8 @@ Pages:
 - `chief-of-staff-setup.html`
 - `chief-of-staff-pricing.html`
 - `chief-of-staff-refund-policy.html`
+- `chief-of-staff-terms.html`
+- `chief-of-staff-privacy.html`
 - `chief-of-staff-demo.html`
 
 GitHub Pages links:
@@ -37,6 +39,8 @@ GitHub Pages links:
 - `/chief-of-staff-setup.html`
 - `/chief-of-staff-pricing.html`
 - `/chief-of-staff-refund-policy.html`
+- `/chief-of-staff-terms.html`
+- `/chief-of-staff-privacy.html`
 - `/chief-of-staff-demo.html`
 
 Lead submissions:

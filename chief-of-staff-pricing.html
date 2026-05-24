@@ -218,6 +218,8 @@
             <nav class="links" aria-label="Pricing navigation">
                 <a href="index.html">Landing Page</a>
                 <a href="chief-of-staff-refund-policy.html">Refund &amp; Cancellation</a>
+                <a href="chief-of-staff-terms.html">Terms</a>
+                <a href="chief-of-staff-privacy.html">Privacy</a>
                 <a href="chief-of-staff-demo.html">Demo Login</a>
             </nav>
         </div>
@@ -249,7 +251,7 @@
             <article class="plan">
                 <h2 id="partner-name">Operator Partner</h2>
                 <p class="price" id="partner-price">R8,200</p>
-                <p class="period" id="partner-period">Monthly engagement</p>
+                <p class="period" id="partner-period">Monthly subscription</p>
                 <ul>
                     <li>Daily execution and follow-up operations</li>
                     <li>Project management and founder briefing support</li>
@@ -266,10 +268,12 @@
             <h3>Billing Terms</h3>
             <ul>
                 <li>Validation Sprint is billed once upfront for a two-week delivery window.</li>
-                <li>Operator Partner is a monthly service engagement.</li>
-                <li>Until a recurring subscription page is activated, monthly renewals are confirmed and billed via secure Paystack payment request.</li>
+                <li>Operator Partner is billed monthly via Paystack using the subscription checkout link.</li>
+                <li>Recurring billing continues monthly until the client cancels before the next renewal date.</li>
+                <li>To cancel renewal, client emails support at least 24 hours before renewal date.</li>
                 <li>Support and billing email: <span id="support-email">muchangasethu0@gmail.com</span>.</li>
-                <li>Disputes, cancellations, and refunds follow the public policy published here: <a href="chief-of-staff-refund-policy.html">chief-of-staff-refund-policy.html</a>.</li>
+                <li>Disputes, cancellations, and refunds follow <a href="chief-of-staff-refund-policy.html">Refund Policy</a>.</li>
+                <li>Service use and data handling follow <a href="chief-of-staff-terms.html">Terms</a> and <a href="chief-of-staff-privacy.html">Privacy Policy</a>.</li>
             </ul>
             <p class="tiny">
                 Updated <span id="today-date"></span>.
@@ -289,7 +293,7 @@
         const base = safeObject(window.chiefOfStaffPaymentConfig);
         const config = {
             businessName: base.businessName || "FounderFlow",
-            supportEmail: base.supportEmail || "support@example.com",
+            supportEmail: base.supportEmail || "muchangasethu0@gmail.com",
             currency: (base.currency || "ZAR").toUpperCase(),
             plans: safeObject(base.plans),
             links: safeObject(base.links)
@@ -318,7 +322,7 @@
         document.getElementById("pilot-period").textContent = pilot.period || "One-time two-week pilot";
         document.getElementById("partner-name").textContent = partner.name || "Operator Partner";
         document.getElementById("partner-price").textContent = formatMoney(partner.price || 8200);
-        document.getElementById("partner-period").textContent = partner.period || "Monthly engagement";
+        document.getElementById("partner-period").textContent = partner.period || "Monthly subscription";
         document.getElementById("today-date").textContent = new Date().toLocaleDateString("en-ZA", {
             year: "numeric",
             month: "long",

@@ -25,6 +25,8 @@ After publish, use these links:
 - Demo: `https://Sethu122.github.io/<your-repo>/chief-of-staff-demo.html`
 - Pricing: `https://Sethu122.github.io/<your-repo>/chief-of-staff-pricing.html`
 - Policy: `https://Sethu122.github.io/<your-repo>/chief-of-staff-refund-policy.html`
+- Terms: `https://Sethu122.github.io/<your-repo>/chief-of-staff-terms.html`
+- Privacy: `https://Sethu122.github.io/<your-repo>/chief-of-staff-privacy.html`
 
 Use `paystack-review-response-template.md` in this folder as your email draft.
 
@@ -36,5 +38,5 @@ Use `paystack-review-response-template.md` in this folder as your email draft.
 ## 4) Current pay links
 
 - Pilot: `https://paystack.shop/pay/c911fnr58n`
-- Partner: `https://paystack.shop/pay/duc4g34l2n`
+- Partner (monthly): `https://paystack.shop/pay/mknz4-2p52`
 

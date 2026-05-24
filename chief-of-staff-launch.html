@@ -295,6 +295,27 @@
             font-size: 15px;
         }
 
+        .panel ul {
+            margin-top: 10px;
+            padding-left: 18px;
+            color: var(--ink-700);
+            font-size: 14px;
+        }
+
+        .panel li + li {
+            margin-top: 6px;
+        }
+
+        .proof-banner {
+            margin-top: 18px;
+            border: 1px solid var(--slate-200);
+            border-radius: var(--radius);
+            background: var(--slate-50);
+            padding: 14px;
+            font-size: 14px;
+            color: var(--ink-700);
+        }
+
         .offer-grid {
             margin-top: 30px;
             display: grid;
@@ -443,6 +464,28 @@
             color: rgba(226, 232, 240, 0.85);
         }
 
+        .consent-row {
+            margin-top: 14px;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            font-size: 13px;
+            color: rgba(226, 232, 240, 0.9);
+        }
+
+        .consent-row input {
+            margin-top: 3px;
+            width: 16px;
+            height: 16px;
+            accent-color: var(--emerald-600);
+        }
+
+        .consent-row a {
+            color: #7dd3fc;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
         .payment-section {
             margin-top: 30px;
             border-top: 1px solid rgba(148, 163, 184, 0.35);
@@ -535,6 +578,11 @@
             margin-top: 10px;
             font-size: 13px;
             color: rgba(226, 232, 240, 0.86);
+        }
+
+        .payment-help a {
+            text-decoration: underline;
+            color: rgba(224, 242, 254, 1);
         }
 
         .bot-field {
@@ -722,8 +770,9 @@
         <div class="container topbar-row">
             <a href="#top" class="brand">Chief of Staff<span>AI</span></a>
             <nav class="top-links" aria-label="Primary">
+                <a href="#market-fit">Who It's For</a>
                 <a href="#how-it-works">How It Works</a>
-                <a href="#early-adopter">Early Adopter</a>
+                <a href="#proof-model">Proof Model</a>
                 <a href="#waitlist">Waitlist</a>
                 <a href="chief-of-staff-pricing.html">Pricing</a>
                 <button class="btn btn-primary" type="button" data-scroll="#waitlist">
@@ -739,12 +788,12 @@
             <div class="container">
                 <p class="eyebrow">
                     <i data-lucide="sparkles"></i>
-                    AI-Powered Chief of Staff for Founders
+                    FounderFlow | AI Chief of Staff for 3-30 Person Teams
                 </p>
-                <h1>Get Back 10-15 Hours Every Week Without Hiring a Full Team.</h1>
+                <h1>Get Back 10-15 Hours Weekly and Run Operations Without Hiring Full-Time Staff.</h1>
                 <p>
-                    We manage inbox triage, scheduling, follow-ups, priorities, and project
-                    momentum so you can focus on high-leverage decisions and growth.
+                    We handle inbox triage, scheduling, follow-ups, and project execution for
+                    busy founders so your team ships faster and your week stays under control.
                 </p>
                 <div class="hero-actions">
                     <button class="btn btn-primary" type="button" data-scroll="#waitlist">
@@ -771,6 +820,54 @@
                 <span>Reduce admin overload</span>
                 <span>Ship projects faster</span>
                 <span>Scale before full-time hiring</span>
+            </div>
+        </section>
+
+        <section class="section section-alt" id="market-fit">
+            <div class="container">
+                <h2>Who FounderFlow Is For</h2>
+                <p class="section-lede">
+                    Best fit for founder-led teams that are already busy, already selling, and
+                    now need consistent execution support.
+                </p>
+                <div class="grid-3">
+                    <article class="panel">
+                        <div class="panel-head">
+                            <i data-lucide="target"></i>
+                            <h3>Best Fit</h3>
+                        </div>
+                        <ul>
+                            <li>Founders with 3-30 person teams</li>
+                            <li>Daily inbox and follow-up pressure</li>
+                            <li>Multiple projects running at once</li>
+                            <li>Need to reclaim time immediately</li>
+                        </ul>
+                    </article>
+                    <article class="panel">
+                        <div class="panel-head">
+                            <i data-lucide="shield-alert"></i>
+                            <h3>Not A Fit Yet</h3>
+                        </div>
+                        <ul>
+                            <li>No active workflow or no recurring tasks yet</li>
+                            <li>No decision-maker available for weekly review</li>
+                            <li>Looking for fully hands-off automation on day one</li>
+                            <li>Need legal or accounting advice as primary service</li>
+                        </ul>
+                    </article>
+                    <article class="panel">
+                        <div class="panel-head">
+                            <i data-lucide="bar-chart-3"></i>
+                            <h3>Outcomes We Track</h3>
+                        </div>
+                        <ul>
+                            <li>Hours reclaimed per week (target: 10-15)</li>
+                            <li>Follow-up completion rate (target: 90%+)</li>
+                            <li>Inbox response cycle time</li>
+                            <li>Project deadline hit rate</li>
+                        </ul>
+                    </article>
+                </div>
             </div>
         </section>
 
@@ -858,6 +955,56 @@
             </div>
         </section>
 
+        <section class="section" id="proof-model">
+            <div class="container">
+                <h2>Proof Model Before Full Automation</h2>
+                <p class="section-lede">
+                    We follow a simple 5-step sequence so you can validate demand, get paid, and
+                    only automate after real traction.
+                </p>
+                <div class="grid-3">
+                    <article class="panel">
+                        <div class="panel-head">
+                            <i data-lucide="search"></i>
+                            <h3>1. Validate</h3>
+                        </div>
+                        <p>Run outreach and capture qualified waitlist demand from founders with active operational pain.</p>
+                    </article>
+                    <article class="panel">
+                        <div class="panel-head">
+                            <i data-lucide="wallet"></i>
+                            <h3>2. Pre-Sell</h3>
+                        </div>
+                        <p>Invite strong leads into paid Pilot or Partner onboarding and confirm payment intent quickly.</p>
+                    </article>
+                    <article class="panel">
+                        <div class="panel-head">
+                            <i data-lucide="users"></i>
+                            <h3>3. Deliver Manually First</h3>
+                        </div>
+                        <p>Start with concierge delivery so we create results before adding more technical complexity.</p>
+                    </article>
+                    <article class="panel">
+                        <div class="panel-head">
+                            <i data-lucide="megaphone"></i>
+                            <h3>4. Distribute</h3>
+                        </div>
+                        <p>Partner with creators and operators who already serve your audience and can refer qualified buyers.</p>
+                    </article>
+                    <article class="panel">
+                        <div class="panel-head">
+                            <i data-lucide="factory"></i>
+                            <h3>5. Productize</h3>
+                        </div>
+                        <p>Use revenue to automate repeated steps and expand capacity without lowering quality.</p>
+                    </article>
+                </div>
+                <div class="proof-banner">
+                    First sale target: 1 Pilot and 1 Partner client this week, with onboarding call booked within 24 hours of payment.
+                </div>
+            </div>
+        </section>
+
         <section class="section" id="early-adopter">
             <div class="container">
                 <h2>Early-Adopter Program</h2>
@@ -868,7 +1015,7 @@
                 <div class="offer-grid">
                     <article class="offer">
                         <h3 id="pilot-plan-name">Validation Sprint</h3>
-                        <p class="offer-price" id="pilot-plan-price">$750</p>
+                        <p class="offer-price" id="pilot-plan-price">R3,500</p>
                         <p class="offer-period" id="pilot-plan-period">Two-week pilot</p>
                         <ul>
                             <li><i data-lucide="check"></i><span>Inbox triage and draft workflows</span></li>
@@ -889,7 +1036,7 @@
                     <article class="offer offer-highlight">
                         <h3 id="partner-plan-name">Operator Partner</h3>
                         <p class="offer-price" id="partner-plan-price">R8,200</p>
-                        <p class="offer-period" id="partner-plan-period">Monthly engagement</p>
+                        <p class="offer-period" id="partner-plan-period">Monthly subscription</p>
                         <ul>
                             <li><i data-lucide="check"></i><span>Daily execution and follow-up engine</span></li>
                             <li><i data-lucide="check"></i><span>Project management and briefing support</span></li>
@@ -929,6 +1076,14 @@
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_next" value="chief-of-staff-thank-you.html">
                     <input type="hidden" name="_url" id="form-page-url" value="">
+                    <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none">
+                    <input type="hidden" id="utm-source" name="utm_source" value="">
+                    <input type="hidden" id="utm-medium" name="utm_medium" value="">
+                    <input type="hidden" id="utm-campaign" name="utm_campaign" value="">
+                    <input type="hidden" id="utm-content" name="utm_content" value="">
+                    <input type="hidden" id="utm-term" name="utm_term" value="">
+                    <input type="hidden" id="utm-id" name="utm_id" value="">
+                    <input type="hidden" id="form-referrer" name="referrer" value="">
                     <div class="waitlist-grid">
                         <div class="field">
                             <label for="name">Full Name</label>
@@ -943,6 +1098,10 @@
                             <input id="role" name="role" type="text" placeholder="Founder, COO, EA, etc." required>
                         </div>
                         <div class="field">
+                            <label for="phone">WhatsApp Number</label>
+                            <input id="phone" name="whatsapp_number" type="tel" placeholder="+27..." required>
+                        </div>
+                        <div class="field">
                             <label for="team-size">Team Size</label>
                             <select id="team-size" name="team_size" required>
                                 <option value="" selected disabled>Select team size</option>
@@ -951,6 +1110,16 @@
                                 <option>11-25</option>
                                 <option>26-50</option>
                                 <option>50+</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label for="start-window">Preferred Start Window</label>
+                            <select id="start-window" name="start_window" required>
+                                <option value="" selected disabled>Select start timing</option>
+                                <option>This week</option>
+                                <option>Next 7 days</option>
+                                <option>Next 30 days</option>
+                                <option>Just exploring</option>
                             </select>
                         </div>
                         <div class="field full">
@@ -963,11 +1132,20 @@
                             ></textarea>
                         </div>
                     </div>
+                    <label class="consent-row" for="consent">
+                        <input id="consent" name="consent" type="checkbox" required>
+                        <span>
+                            I agree to FounderFlow contacting me about onboarding and billing, and I have read the
+                            <a href="chief-of-staff-terms.html" target="_blank" rel="noopener">Terms</a>,
+                            <a href="chief-of-staff-privacy.html" target="_blank" rel="noopener">Privacy Policy</a>,
+                            and <a href="chief-of-staff-refund-policy.html" target="_blank" rel="noopener">Refund Policy</a>.
+                        </span>
+                    </label>
                     <button class="btn btn-primary" type="submit">
                         <i data-lucide="user-check"></i>
                         <span>Reserve My Spot</span>
                     </button>
-                    <p class="form-note">By submitting, you agree to be contacted about early access and onboarding.</p>
+                    <p class="form-note">Lead notifications are sent to support email immediately after each submission.</p>
                 </form>
 
                 <section class="payment-section" aria-label="Direct payment checkout">
@@ -977,7 +1155,7 @@
                     <div class="payment-grid">
                         <button type="button" class="pay-btn pay-now-btn" data-plan="pilot">
                             <span>
-                                <strong id="pilot-pay-title">Pay $750 Pilot</strong>
+                                <strong id="pilot-pay-title">Pay R3,500 Pilot</strong>
                                 <span id="pilot-pay-subtitle">Two-week validation sprint</span>
                             </span>
                             <i data-lucide="arrow-right"></i>
@@ -985,7 +1163,7 @@
                         <button type="button" class="pay-btn pay-now-btn" data-plan="partner">
                             <span>
                                 <strong id="partner-pay-title">Pay R8,200 Partner</strong>
-                                <span id="partner-pay-subtitle">Monthly operator engagement</span>
+                                <span id="partner-pay-subtitle">Monthly operator subscription</span>
                             </span>
                             <i data-lucide="arrow-right"></i>
                         </button>
@@ -993,7 +1171,9 @@
                     <p class="payment-help">
                         Card checkout opens in Paystack and redirects back after payment.
                         <a href="chief-of-staff-pricing.html">View pricing</a> and
-                        <a href="chief-of-staff-refund-policy.html">refund policy</a>.
+                        <a href="chief-of-staff-refund-policy.html">refund policy</a>. Review
+                        <a href="chief-of-staff-terms.html">terms</a> and
+                        <a href="chief-of-staff-privacy.html">privacy</a>.
                     </p>
                 </section>
             </div>
@@ -1047,13 +1227,15 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-meta">
-                <p id="brand-name-footer">Chief of Staff AI</p>
-                <p>Support: <a id="support-email-footer" href="mailto:hello@yourdomain.com">hello@yourdomain.com</a></p>
+                <p id="brand-name-footer">FounderFlow</p>
+                <p>Support: <a id="support-email-footer" href="mailto:muchangasethu0@gmail.com">muchangasethu0@gmail.com</a></p>
                 <p>&copy; <span id="year"></span> All rights reserved.</p>
             </div>
             <nav class="footer-links" aria-label="Compliance and support links">
                 <a href="chief-of-staff-pricing.html">Pricing</a>
                 <a href="chief-of-staff-refund-policy.html">Refund &amp; Cancellation</a>
+                <a href="chief-of-staff-terms.html">Terms</a>
+                <a href="chief-of-staff-privacy.html">Privacy</a>
                 <a href="chief-of-staff-demo.html">Product Demo</a>
             </nav>
         </div>
@@ -1082,17 +1264,17 @@
         const override = safeObject(localOverride);
 
         const defaultPlans = {
-            pilot: { name: "Validation Sprint", price: 750, period: "Two-week pilot" },
-            partner: { name: "Operator Partner", price: 8200, period: "Monthly engagement" }
+            pilot: { name: "Validation Sprint", price: 3500, period: "Two-week pilot" },
+            partner: { name: "Operator Partner", price: 8200, period: "Monthly subscription" }
         };
 
         const basePlans = safeObject(base.plans);
         const overridePlans = safeObject(override.plans);
 
         const paymentConfig = {
-            businessName: override.businessName || base.businessName || "Chief of Staff AI",
-            supportEmail: override.supportEmail || base.supportEmail || "hello@yourdomain.com",
-            currency: (override.currency || base.currency || "USD").toUpperCase(),
+            businessName: override.businessName || base.businessName || "FounderFlow",
+            supportEmail: override.supportEmail || base.supportEmail || "muchangasethu0@gmail.com",
+            currency: (override.currency || base.currency || "ZAR").toUpperCase(),
             provider: "paystack",
             onboardingUrl: override.onboardingUrl || base.onboardingUrl || "",
             links: {
@@ -1133,16 +1315,16 @@
 
         const formatMoney = (amount) => {
             if (!Number.isFinite(amount)) {
-                return "$0";
+                return "R0";
             }
             try {
-                return new Intl.NumberFormat("en-US", {
+                return new Intl.NumberFormat("en-ZA", {
                     style: "currency",
                     currency: paymentConfig.currency,
                     maximumFractionDigits: 0
                 }).format(amount);
             } catch (error) {
-                return "$" + amount;
+                return "R" + amount;
             }
         };
 
@@ -1263,6 +1445,27 @@
             const formUrlInput = form.querySelector('input[name="_url"]');
             if (formUrlInput) {
                 formUrlInput.value = window.location.href;
+            }
+
+            const params = new URLSearchParams(window.location.search);
+            const setHidden = (id, fallback = "") => {
+                const node = document.getElementById(id);
+                if (node) {
+                    const queryKey = id.replace("utm-", "utm_");
+                    node.value = params.get(queryKey) || fallback;
+                }
+            };
+
+            setHidden("utm-source");
+            setHidden("utm-medium");
+            setHidden("utm-campaign", "chief-of-staff-ai");
+            setHidden("utm-content", selectedPlanInput?.value || "");
+            setHidden("utm-term");
+            setHidden("utm-id");
+
+            const referrerInput = document.getElementById("form-referrer");
+            if (referrerInput) {
+                referrerInput.value = document.referrer || "direct";
             }
         });
 

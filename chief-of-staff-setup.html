@@ -195,8 +195,9 @@
                 will use your business details and payment links automatically.
             </p>
             <div class="button-row">
-                <a class="btn btn-quiet" href="chief-of-staff-launch.html">Open Landing Page</a>
+                <a class="btn btn-quiet" href="index.html">Open Landing Page</a>
                 <a class="btn btn-quiet" href="chief-of-staff-thank-you.html">Open Thank-You Page</a>
+                <a class="btn btn-quiet" href="chief-of-staff-pricing.html">Open Pricing Page</a>
             </div>
         </section>
 
@@ -297,14 +298,14 @@
                 partner: {
                     name: override.plans?.partner?.name || base.plans?.partner?.name || "Operator Partner",
                     price: Number(override.plans?.partner?.price ?? base.plans?.partner?.price ?? 8200),
-                    period: override.plans?.partner?.period || base.plans?.partner?.period || "Monthly engagement"
+                    period: override.plans?.partner?.period || base.plans?.partner?.period || "Monthly subscription"
                 }
             };
 
             return {
-                businessName: override.businessName || base.businessName || "Chief of Staff AI",
-                supportEmail: override.supportEmail || base.supportEmail || "hello@yourdomain.com",
-                currency: (override.currency || base.currency || "USD").toUpperCase(),
+                businessName: override.businessName || base.businessName || "FounderFlow",
+                supportEmail: override.supportEmail || base.supportEmail || "muchangasethu0@gmail.com",
+                currency: (override.currency || base.currency || "ZAR").toUpperCase(),
                 defaultProvider: "paystack",
                 onboardingUrl: override.onboardingUrl || base.onboardingUrl || "",
                 plans: mergedPlans,

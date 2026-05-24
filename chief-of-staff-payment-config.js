@@ -12,7 +12,7 @@ window.chiefOfStaffPaymentConfig = {
         partner: {
             name: "Operator Partner",
             price: 8200,
-            period: "Monthly engagement"
+            period: "Monthly subscription"
         }
     },
     links: {
