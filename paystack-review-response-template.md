@@ -24,7 +24,7 @@ Use this base URL after GitHub Pages is enabled:
 - Public pricing page: `https://Sethu122.github.io/founderflow-chief-of-staff/chief-of-staff-pricing.html`
 - Current offers:
   - Validation Sprint (Pilot): R3,500 one-time
-  - Operator Partner: R7,500 monthly engagement
+  - Operator Partner: R8,200 monthly engagement
 
 5) **How we handle disputes, cancellation, and refunds**
 - Policy page: `https://Sethu122.github.io/founderflow-chief-of-staff/chief-of-staff-refund-policy.html`
