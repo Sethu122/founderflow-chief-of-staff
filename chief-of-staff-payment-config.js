@@ -6,7 +6,7 @@ window.chiefOfStaffPaymentConfig = {
     plans: {
         pilot: {
             name: "Validation Sprint",
-            price: 3500,
+            price: 1500,
             period: "Two-week pilot"
         },
         partner: {

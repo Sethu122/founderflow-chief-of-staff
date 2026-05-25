@@ -235,7 +235,7 @@
         <section class="grid" aria-label="Plan pricing cards">
             <article class="plan">
                 <h2 id="pilot-name">Validation Sprint</h2>
-                <p class="price" id="pilot-price">R3,500</p>
+                <p class="price" id="pilot-price">R1,500</p>
                 <p class="period" id="pilot-period">One-time two-week pilot</p>
                 <ul>
                     <li>Inbox triage and draft workflows</li>
@@ -318,7 +318,7 @@
         document.getElementById("brand").textContent = config.businessName;
         document.getElementById("support-email").textContent = config.supportEmail;
         document.getElementById("pilot-name").textContent = pilot.name || "Validation Sprint";
-        document.getElementById("pilot-price").textContent = formatMoney(pilot.price || 3500);
+        document.getElementById("pilot-price").textContent = formatMoney(pilot.price || 1500);
         document.getElementById("pilot-period").textContent = pilot.period || "One-time two-week pilot";
         document.getElementById("partner-name").textContent = partner.name || "Operator Partner";
         document.getElementById("partner-price").textContent = formatMoney(partner.price || 3500);

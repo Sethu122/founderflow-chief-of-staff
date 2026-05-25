@@ -248,7 +248,7 @@
             <h2>Complete Payment by Card</h2>
             <p>Continue securely with Paystack and complete your preferred plan.</p>
             <div class="grid">
-                <button type="button" class="btn btn-primary pay-btn" id="pilot-pay-btn" data-plan="pilot">Pay R3,500 Pilot</button>
+                <button type="button" class="btn btn-primary pay-btn" id="pilot-pay-btn" data-plan="pilot">Pay R1,500 Pilot</button>
                 <button type="button" class="btn btn-primary pay-btn" id="partner-pay-btn" data-plan="partner">Pay R3,500 Partner</button>
             </div>
             <p class="tiny">Partner billing is monthly recurring. After payment, onboarding continues on WhatsApp.</p>
@@ -307,7 +307,7 @@
             plans: {
                 pilot: {
                     name: overridePlans.pilot?.name || basePlans.pilot?.name || "Validation Sprint",
-                    price: Number(overridePlans.pilot?.price ?? basePlans.pilot?.price ?? 3500)
+                    price: Number(overridePlans.pilot?.price ?? basePlans.pilot?.price ?? 1500)
                 },
                 partner: {
                     name: overridePlans.partner?.name || basePlans.partner?.name || "Operator Partner",
