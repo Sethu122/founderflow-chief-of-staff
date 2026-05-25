@@ -281,24 +281,8 @@
             return {};
         };
 
-        let localOverride = {};
-        try {
-            localOverride = JSON.parse(localStorage.getItem("chiefOfStaffConfigOverride") || "{}");
-        } catch (error) {
-            localOverride = {};
-        }
-
-        if (/github\.io$/i.test(window.location.hostname)) {
-            try {
-                localStorage.removeItem("chiefOfStaffConfigOverride");
-            } catch (error) {
-                // No action needed if storage is unavailable.
-            }
-            localOverride = {};
-        }
-
         const base = safeObject(window.chiefOfStaffPaymentConfig);
-        const override = safeObject(localOverride);
+        const override = {};
         const basePlans = safeObject(base.plans);
         const overridePlans = safeObject(override.plans);
 
