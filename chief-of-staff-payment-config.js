@@ -11,14 +11,14 @@ window.chiefOfStaffPaymentConfig = {
         },
         partner: {
             name: "Operator Partner",
-            price: 8200,
+            price: 3500,
             period: "Monthly subscription"
         }
     },
     links: {
         paystack: {
             pilot: "https://paystack.shop/pay/c911fnr58n",
-            partner: "https://paystack.shop/pay/mknz4-2p52"
+            partner: "https://paystack.shop/pay/xz1nob0bu8"
         }
     },
     onboardingUrl: "https://wa.me/27731771734?text=Hi%20I%20just%20paid%20and%20want%20to%20book%20my%20onboarding%20call."

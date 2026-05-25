@@ -38,5 +38,5 @@ Use `paystack-review-response-template.md` in this folder as your email draft.
 ## 4) Current pay links
 
 - Pilot: `https://paystack.shop/pay/c911fnr58n`
-- Partner (monthly): `https://paystack.shop/pay/mknz4-2p52`
+- Partner (monthly): `https://paystack.shop/pay/xz1nob0bu8`
 

@@ -12,7 +12,7 @@ Permanent live config (recommended before launch):
 1. Open `chief-of-staff-payment-config.js`
 2. Confirm current live links:
    - Pilot: `https://paystack.shop/pay/c911fnr58n`
-   - Partner monthly: `https://paystack.shop/pay/mknz4-2p52`
+   - Partner monthly: `https://paystack.shop/pay/xz1nob0bu8`
 3. Update optional fields:
    - `businessName`
    - `supportEmail`
